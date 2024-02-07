@@ -29,7 +29,7 @@ struct ToolBar: View {
                         .foregroundColor(.white)
                         .padding(4)
                         .background(
-                            LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.2), Color.green]), startPoint: .top, endPoint: .bottom)
+                            LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.4), Color.yellow.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
                         )
                         .clipShape(Rectangle())
                         .cornerRadius(10)
