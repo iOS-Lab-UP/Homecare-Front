@@ -16,6 +16,7 @@
 		48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */; };
 		48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */; };
 		48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF062B72FED200A6767A /* MainHomecareApp.swift */; };
+		48E7DF092B73015900A6767A /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF082B73015900A6767A /* ToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		48E7DF062B72FED200A6767A /* MainHomecareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomecareApp.swift; sourceTree = "<group>"; };
+		48E7DF082B73015900A6767A /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,17 +167,18 @@
 			path = HomeDashboard;
 			sourceTree = "<group>";
 		};
-		48E7DF042B72FD7700A6767A /* HomeBar */ = {
+		48E7DF042B72FD7700A6767A /* ToolBar */ = {
 			isa = PBXGroup;
 			children = (
+				48E7DF082B73015900A6767A /* ToolBar.swift */,
 			);
-			path = HomeBar;
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				48E7DF042B72FD7700A6767A /* HomeBar */,
+				48E7DF042B72FD7700A6767A /* ToolBar */,
 				48E7DF032B72FD5A00A6767A /* HomeDashboard */,
 			);
 			path = Views;
@@ -313,6 +316,7 @@
 			files = (
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
 				02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */,
+				48E7DF092B73015900A6767A /* ToolBar.swift in Sources */,
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
 			);
