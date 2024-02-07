@@ -14,7 +14,8 @@ struct ContentView: View {
             HStack{
                 VStack{
                     Text("Hola, Carlos! 👋🏻")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+                    
+                        .font(.title).multilineTextAlignment(.leading).bold().padding(.trailing, 100.0)
                     // FIXME: usar poppins
                     // FIXME: pasar a leading
                     Text("Bienvenido a HomeCare")
