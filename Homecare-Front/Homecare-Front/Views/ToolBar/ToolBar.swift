@@ -9,8 +9,10 @@ import SwiftUI
 struct ToolBar: View {
     @Binding var selectedTab: Int
 
+
         var body: some View {
             HStack {
+                
                 TabBarButton(icon: "house", isSelected: selectedTab == 1) {
                     selectedTab = 1
                 }

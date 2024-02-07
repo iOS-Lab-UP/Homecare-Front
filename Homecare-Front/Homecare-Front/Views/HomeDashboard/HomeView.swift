@@ -15,8 +15,12 @@ struct HomeView: View {
                 VStack{
                     Text("Hola, Carlos! 👋🏻")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+                    
+                    
+                    
                     // FIXME: usar poppins
                     // FIXME: pasar a leading
+                    
                     Text("Bienvenido a HomeCare")
                     // FIXME: checar weight y tamaño
                 }
@@ -29,6 +33,8 @@ struct HomeView: View {
             Spacer()
         }
         .padding()
+        ToolBar(selectedTab: .constant(1))
+
     }
 }
 
