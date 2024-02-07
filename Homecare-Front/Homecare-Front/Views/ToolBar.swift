@@ -29,15 +29,17 @@ struct ToolBar: View {
                         .foregroundColor(.white)
                         .padding(4)
                         .background(
-                            LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.4), Color.yellow.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.green.opacity(0.8), Color.yellow.opacity(0.8)]),
+                                startPoint: UnitPoint(x: 0.5, y: 0.3),
+                                endPoint: UnitPoint.bottom
+                            )
                         )
                         .clipShape(Rectangle())
                         .cornerRadius(10)
                         .shadow(color: .green, radius: 3)
-                        .font(.system(size: 30))
-                    
+                        .font(.system(size: 35))
                 }
-
 
                 TabBarButton(icon: "lamp.floor", isSelected: selectedTab == 4) {
                     selectedTab = 4
