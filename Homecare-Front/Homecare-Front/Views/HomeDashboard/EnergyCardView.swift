@@ -42,7 +42,7 @@ struct EnergyCardView: View {
                 }
                 .padding(.all)
             }
-            .frame(height: 150)
+            .frame(height: 100)
         }
         .padding()
     }

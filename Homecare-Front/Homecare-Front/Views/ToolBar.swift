@@ -27,14 +27,14 @@ struct ToolBar: View {
                 Button(action: { selectedTab = 3 }) {
                     Image(systemName: "plus")
                         .foregroundColor(.white)
-                        .padding(5)
+                        .padding(4)
                         .background(
                             LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.2), Color.green]), startPoint: .top, endPoint: .bottom)
                         )
                         .clipShape(Rectangle())
                         .cornerRadius(10)
                         .shadow(color: .green, radius: 3)
-                        .font(.system(size: 40))
+                        .font(.system(size: 30))
                     
                 }
 
@@ -48,7 +48,7 @@ struct ToolBar: View {
                     selectedTab = 5
                 }
             }
-            .frame(width: UIScreen.main.bounds.width - 15, height: 65, alignment: .top)
+            .frame(width: UIScreen.main.bounds.width - 50, height: 56, alignment: .top)
             .background(Capsule().fill(Color.black.opacity(0.8)))
             .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 3)
             
@@ -64,7 +64,7 @@ struct ToolBar: View {
             Button(action: action) {
                 Image(systemName: icon)
                     .foregroundColor(isSelected ? .green : .gray)
-                    .font(.system(size: 23, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .padding()
             }
         }

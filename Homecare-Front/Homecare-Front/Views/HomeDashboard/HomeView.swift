@@ -9,32 +9,36 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Spacer()
-        VStack {
-            HStack{
-                VStack{
-                    Text("Hola, Carlos! 👋🏻")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
-                    
-                    
-                    
-                    // FIXME: usar poppins
-                    // FIXME: pasar a leading
-                    
-                    Text("Bienvenido a HomeCare")
-                    // FIXME: checar weight y tamaño
+        
+        VStack(alignment: .leading) {
+            HStack {
+                // Welcome message
+                VStack(alignment: .leading) {
+                    Text("Bienvenido, Enrique!👋")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+
+                    Text("Bienvenido a Homecare")
+                        .font(.subheadline)
                 }
-            }
-            HStack{
-                RoundedRectangle(cornerRadius: 25)
-                    .fill(.black.opacity(0.75))
-                                .frame(width: 350, height: 150)
-            }
-            Spacer()
-        }
-        .padding()
+                .padding([.leading, .trailing])
+                
+                // Profile
+                Image(systemName: "person.fill")
+                .padding(9)
+                .background(Circle().fill(Color.gray.opacity(0.5)))
+                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                .font(.system(size: 20))
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 15)
+            
+            EnergyCardView().padding(.bottom)
+            RoomsCarrouselView()
+        }.padding(.top, 20)
         ToolBar(selectedTab: .constant(1))
 
+        
     }
 }
 

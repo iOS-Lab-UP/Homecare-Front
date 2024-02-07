@@ -45,7 +45,7 @@ struct RoomEnergyCardView: View {
             Image("living_room") // Replace with your image name
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 300, height: 400) // Adjust the size as needed
+                .frame(width: 300, height: 380) // Adjust the size as needed
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20))
             
