@@ -11,7 +11,7 @@ struct ToolBar: View {
 
 
         var body: some View {
-            HStack {
+            HStack(alignment: .center) {
                 
                 TabBarButton(icon: "house", isSelected: selectedTab == 1) {
                     selectedTab = 1
@@ -29,8 +29,7 @@ struct ToolBar: View {
                         .foregroundColor(.white)
                         .padding(4)
                         .background(
-                            LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.2), Color.green]), startPoint: .top, endPoint: .bottom)
-                        )
+                            LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.2), Color.green]), startPoint: .top, endPoint: .bottom)                        )
                         .clipShape(Rectangle())
                         .cornerRadius(10)
                         .shadow(color: .green, radius: 3)
@@ -49,8 +48,8 @@ struct ToolBar: View {
                 }
             }
             .frame(width: UIScreen.main.bounds.width - 50, height: 56, alignment: .top)
-            .background(Capsule().fill(Color.black.opacity(0.8)))
-            .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 3)
+            .background(Capsule().fill(Color.homecare.opacity(0.8)))
+            .shadow(color: .homecare, radius: 5, x: 0, y: 3)
             
         }
 }

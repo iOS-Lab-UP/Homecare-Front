@@ -13,35 +13,44 @@ struct EnergyCardView: View {
 
             ZStack(alignment: .bottomTrailing) {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .fill(LinearGradient(gradient: Gradient(colors: [Color.black, Color.gray]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .shadow(radius: 10)
+                    .fill(Color.homecare)
                 
-                VStack(alignment: .leading) {
-                    Spacer()
-                    
-                    Text("Energía ahorrada")
-                        .font(.caption)
-                        .foregroundColor(.yellow)
-                    
-                    Text("40%")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
-                    Text("30 kWh")
-                        .font(.title3)
-                        .foregroundColor(.white.opacity(0.7))
-                    
-                    HStack {
+                
+                
+                HStack {
+                    Image("bolt.vector")
+                        .padding(.horizontal, 16.0)
+                    VStack(alignment: .leading) {
                         Spacer()
-                        // Arrow or "chevron" icon
-                        Image(systemName: "arrow.right.circle.fill")
-                            .font(.system(size: 25, weight: .bold))
+                            
+                        
+                        Text("Energía ahorrada")
+                            .font(.caption)
                             .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        
+                        Text("40%")
+                            .font(.system(size: 50))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .fontDesign(.rounded)
+                            
+                        Text("30 kWh")
+                            .font(.title3)
+                            .foregroundColor(.white.opacity(0.7))
+                        
+                        HStack {
+                            Spacer()
+                            Image(systemName: "arrow.right.circle.fill")
+                                .font(.system(size: 25, weight: .bold))
+                                .foregroundColor(.white)
+                        }
                     }
-                }
-                .padding(.all)
+                    .padding(.leading, 10.0)
+                    
+                }.padding()
             }
+            
             .frame(height: 100)
         }
         .padding()

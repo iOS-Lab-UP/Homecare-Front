@@ -15,7 +15,9 @@ struct RoomsCarrouselView: View {
             Text("Habitaciones")
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(.black)
                 .padding(.leading)
+
             HStack{Spacer()}
         }
         
@@ -42,14 +44,12 @@ struct RoomEnergyCardView: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             // Background image
-            Image("living_room") // Replace with your image name
+            Image("room")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 300, height: 380) // Adjust the size as needed
+                .frame(width: 250, height: 300)
                 .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20))
             
-            // Text overlay
             VStack(alignment: .leading) {
                 Text("Sala de estar")
                     .font(.title2)
