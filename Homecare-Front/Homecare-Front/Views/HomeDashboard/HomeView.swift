@@ -10,11 +10,10 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all) // Set the white background to cover the entire screen
-
+            Color.white.edgesIgnoringSafeArea(.all)
+            
             VStack(alignment: .leading) {
                 HStack {
-                    // Welcome message
                     VStack(alignment: .leading) {
                         Text("Hola, Enrique!👋")
                             .font(.system(size: 25))
@@ -28,7 +27,6 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    // Profile
                     Image(systemName: "person.fill")
                         .padding(9)
                         .background(Circle().fill(Color.gray.opacity(0.5)))
@@ -43,11 +41,9 @@ struct HomeView: View {
                 RoomsCarrouselView()
                 ToolBar(selectedTab: .constant(1))
                     .padding(.leading, 25.0)
-
+                
             }
-            .background(Color.white) // Ensure the VStack also has a white background
-            
-               
+            .background(Color.white)
         }
     }
 }

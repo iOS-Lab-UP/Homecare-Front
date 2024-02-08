@@ -7,9 +7,23 @@
 
 import SwiftUI
 
-struct RoomsCarrouselView: View {
-    let numberOfCards = 10
+struct Room {
+    var name: String
+    var imageName: String
+    var energyConsumption: String
+}
 
+
+struct RoomsCarrouselView: View {
+    var rooms: [Room] = [
+        Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
+        Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
+        Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "100 kWh"),
+        Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "250 kWh"),
+        Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
+    ]
+    // let numberOfCards = 5
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Habitaciones")
@@ -17,46 +31,44 @@ struct RoomsCarrouselView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
                 .padding(.leading)
-
+            
             HStack{Spacer()}
         }
         
         ScrollView(.horizontal, showsIndicators: true)
         {
             HStack(spacing:10){
-                // Carrousel with RoomEnergyCardView
-                ForEach(0..<numberOfCards, id: \.self) { _ in
-                        RoomEnergyCardView()
-                    }
-                }.padding()
+                ForEach(rooms, id: \.name) { room in RoomEnergyCardView(room: room) }
+            }.padding()
         }
         
-        
-        }
-    
         
     }
+    
+    
+}
 
 
 
 
 struct RoomEnergyCardView: View {
+    var room: Room
+    
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            // Background image
-            Image("room")
+            Image(room.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 300)
                 .cornerRadius(20)
             
             VStack(alignment: .leading) {
-                Text("Sala de estar")
+                Text(room.name)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 
-                Text("0000 kWh")
+                Text(room.energyConsumption)
                     .font(.headline)
                     .foregroundColor(.white)
             }
@@ -64,6 +76,7 @@ struct RoomEnergyCardView: View {
         }
     }
 }
+
 
 #Preview {
     RoomsCarrouselView()
