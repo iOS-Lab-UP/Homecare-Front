@@ -39,9 +39,6 @@ struct HomeView: View {
                 EnergyCardView()
                     .padding(.bottom, 40)
                 RoomsCarrouselView()
-                ToolBar(selectedTab: .constant(1))
-                    .padding(.leading, 25.0)
-                
             }
             .background(Color.white)
         }

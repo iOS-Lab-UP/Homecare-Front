@@ -9,12 +9,47 @@ import CoreML
 import SwiftUI
 
 
+struct MainView: View {
+    @State private var selectedTab = 1
+    
+    var body: some View {
+        VStack {
+            // The view corresponding to the selected tab
+            switch selectedTab {
+            case 1:
+                HomeView()
+            case 2:
+                EnergyConsumptionChartView()
+            case 3:
+                HomeView()
+
+            case 4:
+                HomeView()
+
+            case 5:
+                HomeView()
+
+            default:
+                HomeView()
+            }
+            
+            Spacer()
+            
+            // Your custom toolbar
+            ToolBar(selectedTab: $selectedTab)
+        }
+        .padding(.bottom, 20)
+        .ignoresSafeArea()
+        .background(Color.white)
+    }
+}
+
 
 @main
 struct MainHomecareApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MainView()
         }
     }
 }
