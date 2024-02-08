@@ -18,7 +18,7 @@
 		48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */; };
 		48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF062B72FED200A6767A /* MainHomecareApp.swift */; };
 		48E7DF092B73015900A6767A /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF082B73015900A6767A /* ToolBar.swift */; };
-		48F16C952B73274C0034D40F /* EnergyConsumptionChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F16C942B73274C0034D40F /* EnergyConsumptionChartView.swift */; };
+		48F16C952B73274C0034D40F /* EnergyConsumptionPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F16C942B73274C0034D40F /* EnergyConsumptionPieChartView.swift */; };
 		48F16C972B7329D60034D40F /* EnergyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F16C962B7329D60034D40F /* EnergyCardView.swift */; };
 		48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F16C982B733E820034D40F /* RoomsCarrouselView.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		48E7DF062B72FED200A6767A /* MainHomecareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomecareApp.swift; sourceTree = "<group>"; };
 		48E7DF082B73015900A6767A /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
-		48F16C942B73274C0034D40F /* EnergyConsumptionChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionChartView.swift; sourceTree = "<group>"; };
+		48F16C942B73274C0034D40F /* EnergyConsumptionPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionPieChartView.swift; sourceTree = "<group>"; };
 		48F16C962B7329D60034D40F /* EnergyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCardView.swift; sourceTree = "<group>"; };
 		48F16C982B733E820034D40F /* RoomsCarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCarrouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,12 +180,20 @@
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48F16C9A2B7548820034D40F /* EnergyConsumption */,
 				02A0B1722B745D05003C4CC8 /* Insights.swift */,
 				48E7DF082B73015900A6767A /* ToolBar.swift */,
 				48E7DF032B72FD5A00A6767A /* HomeDashboard */,
-				48F16C942B73274C0034D40F /* EnergyConsumptionChartView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		48F16C9A2B7548820034D40F /* EnergyConsumption */ = {
+			isa = PBXGroup;
+			children = (
+				48F16C942B73274C0034D40F /* EnergyConsumptionPieChartView.swift */,
+			);
+			path = EnergyConsumption;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F16C952B73274C0034D40F /* EnergyConsumptionChartView.swift in Sources */,
+				48F16C952B73274C0034D40F /* EnergyConsumptionPieChartView.swift in Sources */,
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
 				02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */,
 				02A0B1732B745D05003C4CC8 /* Insights.swift in Sources */,

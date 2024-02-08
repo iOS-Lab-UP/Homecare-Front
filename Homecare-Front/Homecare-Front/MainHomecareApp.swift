@@ -18,7 +18,7 @@ struct MainView: View {
             case 1:
                 HomeView()
             case 2:
-                EnergyConsumptionChartView()
+                EnergyConsumptionPieChartView(percentage: 0.4, energyConsumed: 30)
             case 3:
                 HomeView()
 
