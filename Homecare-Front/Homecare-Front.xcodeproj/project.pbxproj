@@ -14,6 +14,10 @@
 		02EF07252B72BF47009EADB3 /* Homecare_FrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07242B72BF47009EADB3 /* Homecare_FrontTests.swift */; };
 		02EF072F2B72BF47009EADB3 /* Homecare_FrontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */; };
 		02EF07312B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */; };
+		48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */; };
+		48C335A12B7550900048E770 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C335A02B7550900048E770 /* DGCharts */; };
+		48C335A32B7550900048E770 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 48C335A22B7550900048E770 /* DGChartsDynamic */; };
+		48C335A62B75575D0048E770 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 48C335A52B75575D0048E770 /* TinyConstraints */; };
 		48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */; };
 		48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */; };
 		48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF062B72FED200A6767A /* MainHomecareApp.swift */; };
@@ -51,6 +55,7 @@
 		02EF072A2B72BF47009EADB3 /* Homecare-FrontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Homecare-FrontUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITests.swift; sourceTree = "<group>"; };
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionLineChartView.swift; sourceTree = "<group>"; };
 		48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		48E7DF062B72FED200A6767A /* MainHomecareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomecareApp.swift; sourceTree = "<group>"; };
@@ -65,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C335A32B7550900048E770 /* DGChartsDynamic in Frameworks */,
+				48C335A12B7550900048E770 /* DGCharts in Frameworks */,
+				48C335A62B75575D0048E770 /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				48F16C942B73274C0034D40F /* EnergyConsumptionPieChartView.swift */,
+				48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */,
 			);
 			path = EnergyConsumption;
 			sourceTree = "<group>";
@@ -212,6 +221,11 @@
 			dependencies = (
 			);
 			name = "Homecare-Front";
+			packageProductDependencies = (
+				48C335A02B7550900048E770 /* DGCharts */,
+				48C335A22B7550900048E770 /* DGChartsDynamic */,
+				48C335A52B75575D0048E770 /* TinyConstraints */,
+			);
 			productName = "Homecare-Front";
 			productReference = 02EF07102B72BF43009EADB3 /* Homecare-Front.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +298,10 @@
 				Base,
 			);
 			mainGroup = 02EF07072B72BF43009EADB3;
+			packageReferences = (
+				48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */,
+				48C335A42B75575D0048E770 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+			);
 			productRefGroup = 02EF07112B72BF43009EADB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +353,7 @@
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
 				48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
+				48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +695,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		48C335A42B75575D0048E770 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48C335A02B7550900048E770 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		48C335A22B7550900048E770 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+		48C335A52B75575D0048E770 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C335A42B75575D0048E770 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 02EF07082B72BF43009EADB3 /* Project object */;
 }
