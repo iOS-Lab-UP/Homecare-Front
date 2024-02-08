@@ -14,7 +14,6 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            // The view corresponding to the selected tab
             switch selectedTab {
             case 1:
                 HomeView()
@@ -35,7 +34,6 @@ struct MainView: View {
             
             Spacer()
             
-            // Your custom toolbar
             ToolBar(selectedTab: $selectedTab)
         }
         .padding(.bottom, 20)

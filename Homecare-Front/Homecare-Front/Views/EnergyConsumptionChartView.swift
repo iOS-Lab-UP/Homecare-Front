@@ -54,7 +54,6 @@ struct EnergyConsumptionChartView: View {
         }
 }
 
-//preview
 struct EnergyConsumptionChartView_Previews: PreviewProvider {
     static var previews: some View {
         EnergyConsumptionChartView()
