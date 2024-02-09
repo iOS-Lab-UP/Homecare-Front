@@ -10,7 +10,7 @@ import SwiftUI
 struct EnergyCardView: View {
     var body: some View {
         VStack() {
-
+            
             ZStack(alignment: .bottomTrailing) {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
                     .fill(Color.homecare)
@@ -22,7 +22,7 @@ struct EnergyCardView: View {
                         .padding(.horizontal, 16.0)
                     VStack(alignment: .leading) {
                         Spacer()
-                            
+                        
                         
                         Text("Energía ahorrada")
                             .font(.caption)
@@ -34,7 +34,7 @@ struct EnergyCardView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .fontDesign(.rounded)
-                            
+                        
                         Text("30 kWh")
                             .font(.title3)
                             .foregroundColor(.white.opacity(0.7))
