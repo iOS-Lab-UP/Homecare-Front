@@ -12,7 +12,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selectedTab = 1
-    
+    var viewModel = ViewModel()
     var body: some View {
         VStack {
             switch selectedTab {
@@ -21,8 +21,10 @@ struct MainView: View {
             case 2:
                 EnergyConsumptionDashboardView()
             case 3:
-                CFEOCRView()
 
+                UploadPhotoView()
+                    .environmentObject(ViewModel())
+                    
             case 4:
                 RoomListView()
 

@@ -20,6 +20,10 @@
 		48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335A92B75ACB60048E770 /* SettingsView.swift */; };
 		48C335AD2B75AD4A0048E770 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335AC2B75AD4A0048E770 /* RoomListView.swift */; };
 		48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335AE2B75AD740048E770 /* CFEOCRView.swift */; };
+		48D2ABAF2B75C82300C00D2D /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2ABAE2B75C82300C00D2D /* UploadPhotoView.swift */; };
+		48D2ABB22B75C8CF00C00D2D /* photo.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 48D2ABB12B75C8CF00C00D2D /* photo.lottie */; };
+		48D2ABEA2B75CAB700C00D2D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 48D2ABE92B75CAB700C00D2D /* Lottie */; };
+		48D2ABEC2B75CB1D00C00D2D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2ABEB2B75CB1D00C00D2D /* LottieView.swift */; };
 		48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */; };
 		48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */; };
 		48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF062B72FED200A6767A /* MainHomecareApp.swift */; };
@@ -62,6 +66,9 @@
 		48C335A92B75ACB60048E770 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		48C335AC2B75AD4A0048E770 /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		48C335AE2B75AD740048E770 /* CFEOCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFEOCRView.swift; sourceTree = "<group>"; };
+		48D2ABAE2B75C82300C00D2D /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
+		48D2ABB12B75C8CF00C00D2D /* photo.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = photo.lottie; sourceTree = "<group>"; };
+		48D2ABEB2B75CB1D00C00D2D /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		48E7DF062B72FED200A6767A /* MainHomecareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomecareApp.swift; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C335A12B7550900048E770 /* DGCharts in Frameworks */,
+				48D2ABEA2B75CAB700C00D2D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +108,7 @@
 		02EF07072B72BF43009EADB3 = {
 			isa = PBXGroup;
 			children = (
+				48D2ABB02B75C8CF00C00D2D /* Lottie Files */,
 				48E7DF002B72FC5100A6767A /* MLModels */,
 				02EF07122B72BF43009EADB3 /* Homecare-Front */,
 				02EF07232B72BF47009EADB3 /* Homecare-FrontTests */,
@@ -123,7 +132,6 @@
 			children = (
 				48E7DF052B72FD9700A6767A /* Views */,
 				48E7DF012B72FC8600A6767A /* Network */,
-				48E7DEFB2B72FBA300A6767A /* Camera */,
 				02EF07172B72BF47009EADB3 /* Assets.xcassets */,
 				02EF07192B72BF47009EADB3 /* Preview Content */,
 				48E7DF062B72FED200A6767A /* MainHomecareApp.swift */,
@@ -164,13 +172,23 @@
 			path = Rooms;
 			sourceTree = "<group>";
 		};
-		48E7DEFB2B72FBA300A6767A /* Camera */ = {
+		48D2ABAD2B75C81000C00D2D /* Camera */ = {
 			isa = PBXGroup;
 			children = (
 				48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */,
+				48D2ABEB2B75CB1D00C00D2D /* LottieView.swift */,
 				48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */,
+				48D2ABAE2B75C82300C00D2D /* UploadPhotoView.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		48D2ABB02B75C8CF00C00D2D /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				48D2ABB12B75C8CF00C00D2D /* photo.lottie */,
+			);
+			path = "Lottie Files";
 			sourceTree = "<group>";
 		};
 		48E7DF002B72FC5100A6767A /* MLModels */ = {
@@ -201,6 +219,7 @@
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48D2ABAD2B75C81000C00D2D /* Camera */,
 				48C335AB2B75AD3B0048E770 /* Rooms */,
 				48F16C9A2B7548820034D40F /* EnergyConsumption */,
 				02A0B1722B745D05003C4CC8 /* Insights.swift */,
@@ -239,6 +258,7 @@
 			name = "Homecare-Front";
 			packageProductDependencies = (
 				48C335A02B7550900048E770 /* DGCharts */,
+				48D2ABE92B75CAB700C00D2D /* Lottie */,
 			);
 			productName = "Homecare-Front";
 			productReference = 02EF07102B72BF43009EADB3 /* Homecare-Front.app */;
@@ -314,6 +334,7 @@
 			mainGroup = 02EF07072B72BF43009EADB3;
 			packageReferences = (
 				48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */,
+				48D2ABE82B75CAB700C00D2D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 02EF07112B72BF43009EADB3 /* Products */;
 			projectDirPath = "";
@@ -333,6 +354,7 @@
 			files = (
 				02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */,
 				02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */,
+				48D2ABB22B75C8CF00C00D2D /* photo.lottie in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +386,10 @@
 				02A0B1732B745D05003C4CC8 /* Insights.swift in Sources */,
 				48F16C972B7329D60034D40F /* EnergyCardView.swift in Sources */,
 				48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */,
+				48D2ABEC2B75CB1D00C00D2D /* LottieView.swift in Sources */,
 				48E7DF092B73015900A6767A /* ToolBar.swift in Sources */,
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
+				48D2ABAF2B75C82300C00D2D /* UploadPhotoView.swift in Sources */,
 				48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */,
 				48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
@@ -722,6 +746,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		48D2ABE82B75CAB700C00D2D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +761,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 48C3359F2B7550900048E770 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		48D2ABE92B75CAB700C00D2D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48D2ABE82B75CAB700C00D2D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

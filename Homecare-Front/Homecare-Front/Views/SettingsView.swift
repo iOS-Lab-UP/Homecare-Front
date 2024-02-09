@@ -18,33 +18,22 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("General")) {
-                    TextField("Username", text: $username)
-                }
+
                 
                 Section(header: Text("Notifications")) {
                     Toggle("Enabled", isOn: $notificationsEnabled)
                     
-                    Picker("Show Previews", selection: $previewIndex) {
-                        ForEach(0..<previewOptions.count) {
-                            Text(self.previewOptions[$0])
-                        }
                     }
                 }
                 
-                Section(header: Text("More Options")) {
-                    Picker("Select Option", selection: $selectedOption) {
-                        ForEach(options, id: \.self) { option in
-                            Text(option).tag(option)
-                        }
+
                     }
                 }
-            }
-            .navigationBarTitle("Settings")
-        }
-    }
-}
+            
+        
+    
+       
+
 
 #Preview{
     SettingsView()

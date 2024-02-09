@@ -6,7 +6,6 @@
 //
 
 
-import UIKit
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
@@ -36,13 +35,13 @@ struct ImagePicker: UIViewControllerRepresentable {
             self.parent = parent
         }
         
-//        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//                parent.selectedImage = image
+       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                parent.selectedImage = image
 //                analyzeImage(image: image)
-//            }
-//            parent.presentationMode.wrappedValue.dismiss()
-//        }
+            }
+            parent.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
