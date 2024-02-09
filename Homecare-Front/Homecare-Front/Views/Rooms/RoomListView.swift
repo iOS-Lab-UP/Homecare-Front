@@ -16,7 +16,7 @@ struct RoomListView: View {
         Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
         Room(name: "Jardín", imageName: "garden", energyConsumption: "50 kWh")
     ]
-
+    
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 20), count: 2)
     private let spacing: CGFloat = 20
     private let padding: CGFloat = 20
