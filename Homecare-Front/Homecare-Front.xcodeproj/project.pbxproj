@@ -11,9 +11,6 @@
 		02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07152B72BF43009EADB3 /* HomeView.swift */; };
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
-		02EF07252B72BF47009EADB3 /* Homecare_FrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07242B72BF47009EADB3 /* Homecare_FrontTests.swift */; };
-		02EF072F2B72BF47009EADB3 /* Homecare_FrontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */; };
-		02EF07312B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */; };
 		48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */; };
 		48C335A12B7550900048E770 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C335A02B7550900048E770 /* DGCharts */; };
 		48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335A72B756E010048E770 /* EnergyConsumptionDashboardView.swift */; };
@@ -33,34 +30,16 @@
 		48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F16C982B733E820034D40F /* RoomsCarrouselView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		02EF07212B72BF47009EADB3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02EF07082B72BF43009EADB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02EF070F2B72BF43009EADB3;
-			remoteInfo = "Homecare-Front";
-		};
-		02EF072B2B72BF47009EADB3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02EF07082B72BF43009EADB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02EF070F2B72BF43009EADB3;
-			remoteInfo = "Homecare-Front";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		02A0B1722B745D05003C4CC8 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		02EF07102B72BF43009EADB3 /* Homecare-Front.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homecare-Front.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF07152B72BF43009EADB3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		02EF07172B72BF47009EADB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		02EF07202B72BF47009EADB3 /* Homecare-FrontTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Homecare-FrontTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF07242B72BF47009EADB3 /* Homecare_FrontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontTests.swift; sourceTree = "<group>"; };
-		02EF072A2B72BF47009EADB3 /* Homecare-FrontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Homecare-FrontUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITests.swift; sourceTree = "<group>"; };
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		487D887A2B7611E9009568AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionLineChartView.swift; sourceTree = "<group>"; };
 		48C335A72B756E010048E770 /* EnergyConsumptionDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionDashboardView.swift; sourceTree = "<group>"; };
 		48C335A92B75ACB60048E770 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -88,20 +67,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02EF071D2B72BF47009EADB3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02EF07272B72BF47009EADB3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				02EF07102B72BF43009EADB3 /* Homecare-Front.app */,
-				02EF07202B72BF47009EADB3 /* Homecare-FrontTests.xctest */,
-				02EF072A2B72BF47009EADB3 /* Homecare-FrontUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +93,7 @@
 		02EF07122B72BF43009EADB3 /* Homecare-Front */ = {
 			isa = PBXGroup;
 			children = (
+				487D887A2B7611E9009568AF /* Info.plist */,
 				48E7DF052B72FD9700A6767A /* Views */,
 				48E7DF012B72FC8600A6767A /* Network */,
 				02EF07172B72BF47009EADB3 /* Assets.xcassets */,
@@ -264,42 +228,6 @@
 			productReference = 02EF07102B72BF43009EADB3 /* Homecare-Front.app */;
 			productType = "com.apple.product-type.application";
 		};
-		02EF071F2B72BF47009EADB3 /* Homecare-FrontTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02EF07372B72BF47009EADB3 /* Build configuration list for PBXNativeTarget "Homecare-FrontTests" */;
-			buildPhases = (
-				02EF071C2B72BF47009EADB3 /* Sources */,
-				02EF071D2B72BF47009EADB3 /* Frameworks */,
-				02EF071E2B72BF47009EADB3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				02EF07222B72BF47009EADB3 /* PBXTargetDependency */,
-			);
-			name = "Homecare-FrontTests";
-			productName = "Homecare-FrontTests";
-			productReference = 02EF07202B72BF47009EADB3 /* Homecare-FrontTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		02EF07292B72BF47009EADB3 /* Homecare-FrontUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02EF073A2B72BF47009EADB3 /* Build configuration list for PBXNativeTarget "Homecare-FrontUITests" */;
-			buildPhases = (
-				02EF07262B72BF47009EADB3 /* Sources */,
-				02EF07272B72BF47009EADB3 /* Frameworks */,
-				02EF07282B72BF47009EADB3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				02EF072C2B72BF47009EADB3 /* PBXTargetDependency */,
-			);
-			name = "Homecare-FrontUITests";
-			productName = "Homecare-FrontUITests";
-			productReference = 02EF072A2B72BF47009EADB3 /* Homecare-FrontUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,14 +240,6 @@
 				TargetAttributes = {
 					02EF070F2B72BF43009EADB3 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					02EF071F2B72BF47009EADB3 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 02EF070F2B72BF43009EADB3;
-					};
-					02EF07292B72BF47009EADB3 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 02EF070F2B72BF43009EADB3;
 					};
 				};
 			};
@@ -341,8 +261,6 @@
 			projectRoot = "";
 			targets = (
 				02EF070F2B72BF43009EADB3 /* Homecare-Front */,
-				02EF071F2B72BF47009EADB3 /* Homecare-FrontTests */,
-				02EF07292B72BF47009EADB3 /* Homecare-FrontUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,20 +273,6 @@
 				02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */,
 				02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */,
 				48D2ABB22B75C8CF00C00D2D /* photo.lottie in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02EF071E2B72BF47009EADB3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02EF07282B72BF47009EADB3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,37 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02EF071C2B72BF47009EADB3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02EF07252B72BF47009EADB3 /* Homecare_FrontTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02EF07262B72BF47009EADB3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02EF07312B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift in Sources */,
-				02EF072F2B72BF47009EADB3 /* Homecare_FrontUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		02EF07222B72BF47009EADB3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 02EF070F2B72BF43009EADB3 /* Homecare-Front */;
-			targetProxy = 02EF07212B72BF47009EADB3 /* PBXContainerItemProxy */;
-		};
-		02EF072C2B72BF47009EADB3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 02EF070F2B72BF43009EADB3 /* Homecare-Front */;
-			targetProxy = 02EF072B2B72BF47009EADB3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		02EF07322B72BF47009EADB3 /* Debug */ = {
@@ -483,6 +357,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -540,6 +417,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -561,8 +441,10 @@
 				DEVELOPMENT_TEAM = 9BY9RQP8PP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Homecare-Front/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Homecare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,8 +478,10 @@
 				DEVELOPMENT_TEAM = 9BY9RQP8PP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Homecare-Front/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Homecare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -620,82 +504,6 @@
 			};
 			name = Release;
 		};
-		02EF07382B72BF47009EADB3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BXKXXQVPN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "eubgt.Homecare-FrontTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homecare-Front.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homecare-Front";
-			};
-			name = Debug;
-		};
-		02EF07392B72BF47009EADB3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BXKXXQVPN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "eubgt.Homecare-FrontTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homecare-Front.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homecare-Front";
-			};
-			name = Release;
-		};
-		02EF073B2B72BF47009EADB3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BXKXXQVPN;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "eubgt.Homecare-FrontUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Homecare-Front";
-			};
-			name = Debug;
-		};
-		02EF073C2B72BF47009EADB3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BXKXXQVPN;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "eubgt.Homecare-FrontUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Homecare-Front";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -713,24 +521,6 @@
 			buildConfigurations = (
 				02EF07352B72BF47009EADB3 /* Debug */,
 				02EF07362B72BF47009EADB3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		02EF07372B72BF47009EADB3 /* Build configuration list for PBXNativeTarget "Homecare-FrontTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02EF07382B72BF47009EADB3 /* Debug */,
-				02EF07392B72BF47009EADB3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		02EF073A2B72BF47009EADB3 /* Build configuration list for PBXNativeTarget "Homecare-FrontUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02EF073B2B72BF47009EADB3 /* Debug */,
-				02EF073C2B72BF47009EADB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

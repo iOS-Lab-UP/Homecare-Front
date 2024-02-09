@@ -6,13 +6,12 @@
 //
 
 import CoreML
-import DGCharts
 import SwiftUI
+import AVFoundation
 
 
 struct MainView: View {
     @State private var selectedTab = 1
-    var viewModel = ViewModel()
     var body: some View {
         VStack {
             switch selectedTab {
@@ -43,12 +42,40 @@ struct MainView: View {
     }
 }
 
+class ViewModel: ObservableObject {
+    @Published var image: UIImage?
+    @Published var showPicker = false
+    @Published var source: Picker.Source = .library
+    
+    func showPhotoPicker() {
+        if source == .camera {
+            Picker.checkCameraPermissions { granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        self.showPicker = true
+                    } else {
+                        // Consider using a published property or a state variable to trigger an alert view here.
+                        print("Acceso a la cámara denegado o restringido")
+                        // Show an alert to the user with instructions to enable camera access.
+                    }
+                }
+            }
+        } else {
+            // No permission needed for the photo library, but consider checking for PHPhotoLibrary permissions.
+            showPicker = true
+        }
+    }
+
+}
+
 
 @main
 struct MainHomecareApp: App {
+    var viewModel = ViewModel()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(viewModel)
         }
     }
 }
