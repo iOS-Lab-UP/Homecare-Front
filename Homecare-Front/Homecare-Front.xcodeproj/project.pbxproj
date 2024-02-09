@@ -17,6 +17,9 @@
 		48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */; };
 		48C335A12B7550900048E770 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C335A02B7550900048E770 /* DGCharts */; };
 		48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335A72B756E010048E770 /* EnergyConsumptionDashboardView.swift */; };
+		48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335A92B75ACB60048E770 /* SettingsView.swift */; };
+		48C335AD2B75AD4A0048E770 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335AC2B75AD4A0048E770 /* RoomListView.swift */; };
+		48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C335AE2B75AD740048E770 /* CFEOCRView.swift */; };
 		48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */; };
 		48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */; };
 		48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7DF062B72FED200A6767A /* MainHomecareApp.swift */; };
@@ -56,6 +59,9 @@
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48C3359D2B754FA10048E770 /* EnergyConsumptionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionLineChartView.swift; sourceTree = "<group>"; };
 		48C335A72B756E010048E770 /* EnergyConsumptionDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionDashboardView.swift; sourceTree = "<group>"; };
+		48C335A92B75ACB60048E770 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		48C335AC2B75AD4A0048E770 /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
+		48C335AE2B75AD740048E770 /* CFEOCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFEOCRView.swift; sourceTree = "<group>"; };
 		48E7DEFC2B72FBF100A6767A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		48E7DEFE2B72FC2100A6767A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		48E7DF062B72FED200A6767A /* MainHomecareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomecareApp.swift; sourceTree = "<group>"; };
@@ -150,6 +156,14 @@
 			path = "Homecare-FrontUITests";
 			sourceTree = "<group>";
 		};
+		48C335AB2B75AD3B0048E770 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				48C335AC2B75AD4A0048E770 /* RoomListView.swift */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
 		48E7DEFB2B72FBA300A6767A /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +176,7 @@
 		48E7DF002B72FC5100A6767A /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
+				48C335AE2B75AD740048E770 /* CFEOCRView.swift */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -186,10 +201,12 @@
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48C335AB2B75AD3B0048E770 /* Rooms */,
 				48F16C9A2B7548820034D40F /* EnergyConsumption */,
 				02A0B1722B745D05003C4CC8 /* Insights.swift */,
 				48E7DF082B73015900A6767A /* ToolBar.swift */,
 				48E7DF032B72FD5A00A6767A /* HomeDashboard */,
+				48C335A92B75ACB60048E770 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,10 +363,13 @@
 				02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */,
 				02A0B1732B745D05003C4CC8 /* Insights.swift in Sources */,
 				48F16C972B7329D60034D40F /* EnergyCardView.swift in Sources */,
+				48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */,
 				48E7DF092B73015900A6767A /* ToolBar.swift in Sources */,
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
 				48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */,
+				48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
+				48C335AD2B75AD4A0048E770 /* RoomListView.swift in Sources */,
 				48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

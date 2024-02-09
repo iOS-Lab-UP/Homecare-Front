@@ -21,13 +21,13 @@ struct MainView: View {
             case 2:
                 EnergyConsumptionDashboardView()
             case 3:
-                HomeView()
+                CFEOCRView()
 
             case 4:
-                HomeView()
+                RoomListView()
 
             case 5:
-                HomeView()
+                SettingsView()
 
             default:
                 HomeView()
