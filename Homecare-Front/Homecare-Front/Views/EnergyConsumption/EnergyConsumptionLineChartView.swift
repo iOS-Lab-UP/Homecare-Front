@@ -19,7 +19,7 @@ struct EnergyConsumptionLineChartViewWrapper: UIViewRepresentable {
         // Chart properties
         chartView.backgroundColor = .white
         chartView.rightAxis.enabled = false
-        chartView.animate(xAxisDuration: 2.5)
+        chartView.animate(xAxisDuration: 1.5)
         chartView.drawGridBackgroundEnabled = false
         chartView.pinchZoomEnabled = true
         chartView.dragEnabled = true
@@ -38,7 +38,8 @@ struct EnergyConsumptionLineChartViewWrapper: UIViewRepresentable {
         xAxis.labelPosition = .bottom
         xAxis.labelFont = .boldSystemFont(ofSize: 12)
         xAxis.axisLineColor = .systemCyan
-        xAxis.labelTextColor = .white
+        xAxis.labelTextColor = .gray
+    
        
         
         chartView.delegate = context.coordinator
