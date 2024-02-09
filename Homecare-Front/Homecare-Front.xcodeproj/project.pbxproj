@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02A0B1732B745D05003C4CC8 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0B1722B745D05003C4CC8 /* Insights.swift */; };
 		02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07152B72BF43009EADB3 /* HomeView.swift */; };
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
@@ -31,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02A0B1722B745D05003C4CC8 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		02EF07102B72BF43009EADB3 /* Homecare-Front.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homecare-Front.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF07152B72BF43009EADB3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		02EF07172B72BF47009EADB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				48D2ABAD2B75C81000C00D2D /* Camera */,
 				48C335AB2B75AD3B0048E770 /* Rooms */,
 				48F16C9A2B7548820034D40F /* EnergyConsumption */,
-				02A0B1722B745D05003C4CC8 /* Insights.swift */,
 				48E7DF082B73015900A6767A /* ToolBar.swift */,
 				48E7DF032B72FD5A00A6767A /* HomeDashboard */,
 				48C335A92B75ACB60048E770 /* SettingsView.swift */,
@@ -287,7 +284,6 @@
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
 				48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */,
 				02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */,
-				02A0B1732B745D05003C4CC8 /* Insights.swift in Sources */,
 				48F16C972B7329D60034D40F /* EnergyCardView.swift in Sources */,
 				48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */,
 				48D2ABEC2B75CB1D00C00D2D /* LottieView.swift in Sources */,

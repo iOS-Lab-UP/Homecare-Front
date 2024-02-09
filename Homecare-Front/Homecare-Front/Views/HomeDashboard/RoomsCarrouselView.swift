@@ -15,14 +15,14 @@ struct Room {
 
 
 struct RoomsCarrouselView: View {
-    var rooms: [Room] = [
+    let rooms: [Room] = [
         Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
         Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
         Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "100 kWh"),
         Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "250 kWh"),
         Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
+        Room(name: "Jardín", imageName: "garden", energyConsumption: "50 kWh")
     ]
-    // let numberOfCards = 5
     
     var body: some View {
         VStack(alignment: .leading){
