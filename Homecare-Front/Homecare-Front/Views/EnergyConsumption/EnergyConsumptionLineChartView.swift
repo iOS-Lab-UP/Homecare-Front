@@ -20,6 +20,10 @@ struct EnergyConsumptionLineChartViewWrapper: UIViewRepresentable {
         chartView.backgroundColor = .white
         chartView.rightAxis.enabled = false
         chartView.animate(xAxisDuration: 2.5)
+        chartView.drawGridBackgroundEnabled = false
+        chartView.pinchZoomEnabled = true
+        chartView.dragEnabled = true
+        chartView.setScaleEnabled(true)
         
         // YAxis properties
         let yAxis = chartView.leftAxis
@@ -88,14 +92,7 @@ struct EnergyConsumptionLineChartViewWrapper: UIViewRepresentable {
         ChartDataEntry(x: 10.0, y: 40.0),
         ChartDataEntry(x: 11.0, y: 32.0),
         ChartDataEntry(x: 12.0, y: 45.0),
-        ChartDataEntry(x: 13.0, y: 38.0),
-        ChartDataEntry(x: 14.0, y: 50.0),
-        ChartDataEntry(x: 15.0, y: 42.0),
-        ChartDataEntry(x: 16.0, y: 55.0),
-        ChartDataEntry(x: 17.0, y: 48.0),
-        ChartDataEntry(x: 18.0, y: 60.0),
-        ChartDataEntry(x: 19.0, y: 52.0),
-        ChartDataEntry(x: 20.0, y: 65.0),
+
         // Add more data points here if needed
     ])
 }

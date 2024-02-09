@@ -6,6 +6,7 @@
 //
 
 import CoreML
+import DGCharts
 import SwiftUI
 
 
@@ -18,7 +19,7 @@ struct MainView: View {
             case 1:
                 HomeView()
             case 2:
-                EnergyConsumptionPieChartView(percentage: 0.4, energyConsumed: 30)
+                EnergyConsumptionDashboardView()
             case 3:
                 HomeView()
 
@@ -32,12 +33,10 @@ struct MainView: View {
                 HomeView()
             }
             
-            Spacer()
             
             ToolBar(selectedTab: $selectedTab)
         }
         .padding(.bottom, 20)
-        .ignoresSafeArea()
         .background(Color.white)
     }
 }
@@ -50,6 +49,10 @@ struct MainHomecareApp: App {
             MainView()
         }
     }
+}
+
+#Preview{
+    MainView()
 }
 
 

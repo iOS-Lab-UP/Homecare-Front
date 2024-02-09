@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Charts
 
 struct EnergyConsumptionPieChartView: View {
     var percentage: CGFloat // The completion percentage of the circle (0.0 to 1.0)
