@@ -32,7 +32,7 @@ struct RoomListView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach(rooms, id: \.name) { room in
-                        RoomEnergyCardView(room: room)
+                        RoomEnergySquare(room: room)
                             .frame(width: (UIScreen.main.bounds.width - (padding * 2) - spacing) / 2, height: 180)
                             .cornerRadius(25)
                             .padding(.bottom, spacing)
@@ -43,6 +43,34 @@ struct RoomListView: View {
         }
     }
 }
+
+struct RoomEnergySquare: View {
+    var room: Room
+
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            // Imagen de fondo
+            Image(room.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: (UIScreen.main.bounds.width - (20 * 2) - 20) / 2, height: 180)
+                .cornerRadius(25)
+                .clipped()
+
+            // Superponer un degradado para mejorar la legibilidad del texto
+            LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                .cornerRadius(25)
+
+            // Texto del título de la habitación
+            Text(room.name)
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding()
+        }
+    }
+}
+
 
 #Preview {
     RoomListView()
