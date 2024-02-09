@@ -20,7 +20,6 @@ struct MainView: View {
             switch selectedTab {
             case 1:
                 HomeView()
-                    .environmentObject(globalDataModel)
             case 2:
                 EnergyConsumptionDashboardView()
             case 3:

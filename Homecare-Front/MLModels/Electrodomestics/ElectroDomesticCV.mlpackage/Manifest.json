@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "3D9F448B-9ED4-4D60-A96B-785C47471933": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "42CDD5A3-75B2-46C6-82B5-2C15D529F7EE": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "ElectroDomesticCV 1.mlmodel",
+            "path": "com.apple.CoreML/ElectroDomesticCV 1.mlmodel"
+        },
+        "8B2AD34C-4EA8-4B08-A676-DF6991882441": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "42CDD5A3-75B2-46C6-82B5-2C15D529F7EE"
+}
