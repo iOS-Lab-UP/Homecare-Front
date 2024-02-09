@@ -36,12 +36,6 @@ struct SettingsView: View {
                             Text("Enabled")
                         }
                     }
-                    
-                    Picker("Show Previews", selection: $previewIndex) {
-                        ForEach(0..<previewOptions.count) {
-                            Text(self.previewOptions[$0])
-                        }
-                    }
                 }
                 
                 Section(header: Text("Sound").foregroundColor(.primary)) {
@@ -78,6 +72,7 @@ struct SettingsView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Settings")
         }
+        .environment(\.colorScheme, .light)
     }
 }
 
