@@ -12,11 +12,15 @@ import AVFoundation
 
 struct MainView: View {
     @State private var selectedTab = 1
+    @EnvironmentObject var globalDataModel: GlobalDataModel
+
+
     var body: some View {
         VStack {
             switch selectedTab {
             case 1:
                 HomeView()
+                    .environmentObject(globalDataModel)
             case 2:
                 EnergyConsumptionDashboardView()
             case 3:
@@ -47,6 +51,7 @@ class ViewModel: ObservableObject {
     @Published var showPicker = false
     @Published var source: Picker.Source = .library
     
+    
     func showPhotoPicker() {
         if source == .camera {
             Picker.checkCameraPermissions { granted in
@@ -72,13 +77,11 @@ class ViewModel: ObservableObject {
 @main
 struct MainHomecareApp: App {
     let networkManager = NetworkManager.shared
-    let globalDataModel = GlobalDataModel.shared
     var viewModel = ViewModel()
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environmentObject(viewModel)
-                .environment(globalDataModel)
                 
         }
     }
