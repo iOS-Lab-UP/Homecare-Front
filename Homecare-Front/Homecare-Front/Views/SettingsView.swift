@@ -16,7 +16,6 @@ struct SettingsView: View {
     @State private var darkModeEnabled = false
     
     let previewOptions = ["Always", "When Unlocked", "Never"]
-    let options = ["Option 1", "Option 2", "Option 3"]
     
     var body: some View {
         NavigationView {
