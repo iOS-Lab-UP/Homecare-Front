@@ -67,7 +67,7 @@ class ViewModel: ObservableObject {
                 }
             }
         } else {
-            // No permission needed for the photo library, but consider checking for PHPhotoLibrary permissions.
+            // No permission needed for the photo library, but consider checking for PHPhotoLibrary permission/Users/luisced/Code/iOS-Lab/Homecare/Homecare-Front/Homecare-Front/Homecare-Front/Views/Camera/UploadPhotoView.swifts.
             showPicker = true
         }
     }

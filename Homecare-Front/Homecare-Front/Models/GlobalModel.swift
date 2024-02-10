@@ -7,11 +7,14 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 class GlobalDataModel: ObservableObject {
     static let shared = GlobalDataModel()
     @Published var predictionData: [Double] = []
     @Published var advicePrompt: String = ""
+    // image
+    @Published var selectedImage: UIImage?
     
     private init() {} // Private initializer to enforce singleton usage
     

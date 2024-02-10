@@ -70,13 +70,12 @@ struct UploadPhotoView: View{
                 }
                 Spacer()
                 VStack{
-                    Button(action: {showRoomsSheet.toggle()}){
-                        
-                    }
+
                     HStack{
                         if vm.image != nil{
                             Button(action: {
-                                navigateToDashboard = true
+                                analyzeImage(image: vm.image!)
+                                showRoomsSheet.toggle()
                             }){
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 20.0)
