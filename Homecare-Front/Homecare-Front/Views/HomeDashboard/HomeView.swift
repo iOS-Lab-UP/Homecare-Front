@@ -36,6 +36,9 @@ struct HomeView: View {
                 .padding(.all, 20)
                 .padding(.bottom, 15)
                 
+                SuggestionsCardView()
+                    .padding(.bottom, 40)
+                
                 EnergyCardView()
                     .padding(.bottom, 40)
                 RoomsCarrouselView()
