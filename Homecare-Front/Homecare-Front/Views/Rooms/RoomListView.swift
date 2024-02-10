@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct RoomListView: View {
-    let rooms: [Room] = [
-        Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
-        Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
-        Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "100 kWh"),
-        Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "250 kWh"),
-        Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
-        Room(name: "Jardín", imageName: "garden", energyConsumption: "50 kWh")
-    ]
+    @EnvironmentObject var energyData: EnergyData
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 20), count: 2)
     private let spacing: CGFloat = 20
@@ -32,15 +25,20 @@ struct RoomListView: View {
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: spacing) {
-                    ForEach(rooms, id: \.name) { room in
+                    ForEach(energyData.rooms, id: \.id) { room in
                         RoomEnergySquare(room: room)
-                            .frame(width: (UIScreen.main.bounds.width - (padding * 2) - spacing) / 2, height: 180)
+                            .frame(height: 180)
                             .cornerRadius(25)
-                            .padding(.bottom, spacing)
                     }
                 }
                 .padding(.horizontal)
+                BulbCounterCard()
+                    .frame(height: 180)
+                    .padding(.horizontal, padding)
+                    .padding(.top, spacing)
             }
+            
+            
         }
     }
 }
@@ -68,6 +66,54 @@ struct RoomEnergySquare: View {
         }
     }
 }
+
+struct BulbCounterCard: View {
+    @EnvironmentObject var energyData: EnergyData
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .fill(Color.homecare)
+            
+            VStack {
+                Text("Número de focos")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                
+                HStack(spacing: 40) {
+                    Button(action: {
+                        if energyData.numBulbs > 0 { energyData.numBulbs -= 1 }
+                    }) {
+                        Image(systemName: "minus.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Text("\(energyData.numBulbs)")
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 80, alignment: .center)
+                    
+                    Button(action: {
+                        energyData.numBulbs += 1
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.green)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 180)
+        .shadow(radius: 5)
+        .padding(.horizontal)
+    }
+}
+
 
 
 #Preview {

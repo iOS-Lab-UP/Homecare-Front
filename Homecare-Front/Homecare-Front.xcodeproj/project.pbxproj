@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020759302B77E7E60032D3B1 /* SmarstStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */; };
+		026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026975C62B77433100CFB9C7 /* DataStructures.swift */; };
+		026975C92B7770BB00CFB9C7 /* SuggestionsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */; };
 		02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07152B72BF43009EADB3 /* HomeView.swift */; };
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmarstStackView.swift; sourceTree = "<group>"; };
+		026975C62B77433100CFB9C7 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCardView.swift; sourceTree = "<group>"; };
 		02EF07102B72BF43009EADB3 /* Homecare-Front.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homecare-Front.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF07152B72BF43009EADB3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		02EF07172B72BF47009EADB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		02EF07072B72BF43009EADB3 = {
 			isa = PBXGroup;
 			children = (
+				026975C62B77433100CFB9C7 /* DataStructures.swift */,
 				48D2ABB02B75C8CF00C00D2D /* Lottie Files */,
 				48E7DF002B72FC5100A6767A /* MLModels */,
 				02EF07122B72BF43009EADB3 /* Homecare-Front */,
@@ -206,6 +213,8 @@
 				02EF07152B72BF43009EADB3 /* HomeView.swift */,
 				48F16C962B7329D60034D40F /* EnergyCardView.swift */,
 				48F16C982B733E820034D40F /* RoomsCarrouselView.swift */,
+				0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */,
+				026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */,
 			);
 			path = HomeDashboard;
 			sourceTree = "<group>";
@@ -317,6 +326,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F16C952B73274C0034D40F /* EnergyConsumptionPieChartView.swift in Sources */,
+				020759302B77E7E60032D3B1 /* SmarstStackView.swift in Sources */,
+				026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */,
 				48B31E542B76CAE300BC52FE /* GlobalModel.swift in Sources */,
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
 				48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */,
@@ -326,6 +337,7 @@
 				48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */,
 				483FDDC72B77162800B316B2 /* ElectroDomesticCV.mlmodel in Sources */,
 				48D2ABEC2B75CB1D00C00D2D /* LottieView.swift in Sources */,
+				026975C92B7770BB00CFB9C7 /* SuggestionsCardView.swift in Sources */,
 				48E7DF092B73015900A6767A /* ToolBar.swift in Sources */,
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
 				48D2ABAF2B75C82300C00D2D /* UploadPhotoView.swift in Sources */,

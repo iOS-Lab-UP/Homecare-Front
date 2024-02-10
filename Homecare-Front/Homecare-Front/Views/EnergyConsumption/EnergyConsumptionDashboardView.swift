@@ -18,7 +18,7 @@ struct EnergyConsumptionDashboardView: View {
                 .foregroundColor(.black)
                 .padding(.bottom, 20.0)
             
-            EnergyConsumptionPieChartView(percentage: 0.4, energyConsumed: 30)
+            EnergyConsumptionPieChartView()
                 .padding(.leading, 110.0)
                 .padding(.bottom, 20.0)
                 .foregroundColor(.black)
@@ -38,8 +38,8 @@ struct EnergyConsumptionDashboardView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
             }.frame(width: 350, height: 80)
-
-                
+            
+            
             
             EnergyConsumptionLineChartViewWrapper(yValues: [
                 ChartDataEntry(x: 1.0, y: 10.0),

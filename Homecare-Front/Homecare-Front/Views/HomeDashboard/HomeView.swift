@@ -34,11 +34,18 @@ struct HomeView: View {
                         .font(.system(size: 20))
                 }
                 .padding(.all, 20)
-                .padding(.bottom, 15)
+                .padding(.bottom, 10)
                 
-                EnergyCardView()
-                    .padding(.bottom, 40)
+                SuggestionsCardView()
+                    .padding(.bottom, 20)
+                
+//                EnergyCardView()
+                SmartStackView()
+                    .padding(.bottom, 30)
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10 )
                 RoomsCarrouselView()
+
             }
             .background(Color.white)
         }

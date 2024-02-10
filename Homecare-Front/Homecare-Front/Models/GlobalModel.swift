@@ -12,6 +12,5 @@ class GlobalDataModel: ObservableObject {
     @Published var predictionData: [Double] = []
     @Published var advicePrompt: String = ""
     
-
     private init() {} // Private initializer to enforce singleton usage
 }

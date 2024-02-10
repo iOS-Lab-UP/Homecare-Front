@@ -13,8 +13,8 @@ import AVFoundation
 struct MainView: View {
     @State private var selectedTab = 1
     @EnvironmentObject var globalDataModel: GlobalDataModel
-
-
+    
+    
     var body: some View {
         VStack {
             switch selectedTab {
@@ -23,16 +23,17 @@ struct MainView: View {
             case 2:
                 EnergyConsumptionDashboardView()
             case 3:
-
+                
                 UploadPhotoView()
                     .environmentObject(ViewModel())
-                    
+                
             case 4:
                 RoomListView()
-
+                
+                
             case 5:
                 SettingsView()
-
+                
             default:
                 HomeView()
             }
@@ -69,12 +70,13 @@ class ViewModel: ObservableObject {
             showPicker = true
         }
     }
-
+    
 }
 
 
 @main
 struct MainHomecareApp: App {
+    var energyData = EnergyData()
     let networkManager = NetworkManager.shared
     var viewModel = ViewModel()
     var body: some Scene {
@@ -82,7 +84,7 @@ struct MainHomecareApp: App {
             
             MainView()
                 .environmentObject(viewModel)
-                
+                .environmentObject(energyData)
         }
     }
 }

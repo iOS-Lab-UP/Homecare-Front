@@ -7,55 +7,55 @@
 
 import SwiftUI
 
+
+
 struct EnergyCardView: View {
+    @EnvironmentObject var energyData: EnergyData
     var body: some View {
-        VStack() {
-            
+        VStack {
             ZStack(alignment: .bottomTrailing) {
-                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .fill(Color.homecare)
-                
-                
                 
                 HStack {
                     Image("bolt.vector")
                         .padding(.horizontal, 16.0)
+                    
                     VStack(alignment: .leading) {
                         Spacer()
                         
-                        
                         Text("Energía ahorrada")
-                            .font(.caption)
+                            .font(.title2)
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                         
-                        Text("40%")
+                        Text("\(energyData.kWhUsed != 0 ? Double(energyData.kWhSaved) * 100 / Double(energyData.kWhUsed) : 0, specifier: "%.1f")%")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .fontDesign(.rounded)
                         
-                        Text("30 kWh")
+                        
+                        Text("\(energyData.kWhSaved) kWh")
                             .font(.title3)
                             .foregroundColor(.white.opacity(0.7))
                         
                         HStack {
                             Spacer()
-                            Image(systemName: "arrow.right.circle.fill")
-                                .font(.system(size: 25, weight: .bold))
-                                .foregroundColor(.white)
+//                            Image(systemName: "arrow.right.circle.fill")
+//                                .font(.system(size: 25, weight: .bold))
+//                                .foregroundColor(.white)
                         }
                     }
                     .padding(.leading, 10.0)
-                    
                 }.padding()
             }
-            
-            .frame(height: 100)
+            .frame(height: 60)
         }
         .padding()
     }
 }
+
 
 #Preview {
     EnergyCardView()
