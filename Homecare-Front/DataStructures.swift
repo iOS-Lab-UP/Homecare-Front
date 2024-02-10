@@ -11,13 +11,13 @@ import Combine
 class EnergyData: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
     
-    var kWhSaved: Int = 5 {
+    var kWhSaved: Int = 5 { // TODO: Determine
         willSet {
             objectWillChange.send()
         }
     }
     
-    var numBulbs: Int = 6 {
+    var numBulbs: Int = 0 {
         willSet {
             objectWillChange.send()
         }
