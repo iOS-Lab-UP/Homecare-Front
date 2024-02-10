@@ -61,6 +61,9 @@ struct RoomEnergyCardView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 300)
                 .cornerRadius(20)
+                .overlay(
+                    LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                )
             
             VStack(alignment: .leading) {
                 Text(room.name)
@@ -76,6 +79,7 @@ struct RoomEnergyCardView: View {
         }
     }
 }
+
 
 
 #Preview {
