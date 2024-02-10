@@ -11,7 +11,6 @@ import SwiftUI
 
 struct EnergyCardView: View {
     @EnvironmentObject var energyData: EnergyData
-    
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {

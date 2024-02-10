@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EnergyConsumptionPieChartView: View {
     @EnvironmentObject var energyData: EnergyData
-    
     var body: some View {
         ZStack {
             Circle()

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RoomListView: View {
-    @EnvironmentObject var energyData: EnergyData
     let rooms: [Room] = [
         Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
         Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
@@ -44,7 +43,6 @@ struct RoomListView: View {
                     .frame(height: 180)
                     .padding(.horizontal, padding)
                     .padding(.top, spacing)
-                    .environmentObject(EnergyData())
             }
             
             
@@ -78,19 +76,18 @@ struct RoomEnergySquare: View {
 
 struct BulbCounterCard: View {
     @EnvironmentObject var energyData: EnergyData
-    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25, style: .continuous)
                 .fill(Color.homecare)
-
+            
             VStack {
                 Text("Número de focos")
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                     .padding(.top)
-
+                
                 HStack(spacing: 40) {
                     Button(action: {
                         if energyData.numBulbs > 0 { energyData.numBulbs -= 1 }
