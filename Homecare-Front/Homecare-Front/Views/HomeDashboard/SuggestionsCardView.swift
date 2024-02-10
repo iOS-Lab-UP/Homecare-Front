@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct SuggestionsCardView: View {
+    @EnvironmentObject var globalDataModel: GlobalDataModel
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -29,7 +32,7 @@ struct SuggestionsCardView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     
-                    Text("Vamos, juntos podemos marcar la diferencia! 🌱 Apaga las luces cuando salgas de una habitación. 💡")
+                    Text(globalDataModel.advicePrompt)
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.9))
                         .frame(width: 240, alignment: .leading)
@@ -41,6 +44,9 @@ struct SuggestionsCardView: View {
         }
         .padding(.horizontal, 16)
     }
+    
+
+    
 }
 
 struct SuggestionsCardView_Previews: PreviewProvider {

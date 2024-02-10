@@ -8,6 +8,7 @@
 import CoreML
 import SwiftUI
 import AVFoundation
+import Alamofire
 
 
 struct MainView: View {
@@ -79,12 +80,17 @@ struct MainHomecareApp: App {
     var energyData = EnergyData()
     let networkManager = NetworkManager.shared
     var viewModel = ViewModel()
+    
+    init() {
+        fetchMotivationalPhrase()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            
             MainView()
                 .environmentObject(viewModel)
                 .environmentObject(energyData)
+                .environmentObject(GlobalDataModel.shared)
         }
     }
 }

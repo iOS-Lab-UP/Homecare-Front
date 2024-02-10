@@ -22,6 +22,11 @@ struct APIResponse<T: Decodable>: Decodable {
     let data: T? // This remains generic and can be 'Bool', 'User', or any other Decodable type
 }
 
+struct Phrase: Decodable {
+    let phrase: String
+    let success: Bool
+}
+
 
 
 /// `APIEndpoints` provides full URL strings for network requests to the various endpoints of the Genesis API.
@@ -31,6 +36,8 @@ struct APIEndpoints {
     static let baseURL = "https://api.luishomeserver.com"
 
    static let predict = baseURL + "/predict"
+    
+    static let advicePrompt = baseURL + "/generate-motivational-phrase"
 }
 
 /// `NetworkManager` handles all network calls to the Genesis API.
