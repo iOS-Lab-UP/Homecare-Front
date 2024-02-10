@@ -38,6 +38,7 @@ struct HomeView: View {
                 
                 EnergyCardView()
                     .padding(.bottom, 40)
+                    .environmentObject(EnergyData())
                 RoomsCarrouselView()
             }
             .background(Color.white)

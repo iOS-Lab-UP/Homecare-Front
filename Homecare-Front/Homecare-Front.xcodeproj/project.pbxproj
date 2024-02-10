@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026975C62B77433100CFB9C7 /* DataStructures.swift */; };
 		02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07152B72BF43009EADB3 /* HomeView.swift */; };
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026975C62B77433100CFB9C7 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		02EF07102B72BF43009EADB3 /* Homecare-Front.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homecare-Front.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EF07152B72BF43009EADB3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		02EF07172B72BF47009EADB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		02EF07072B72BF43009EADB3 = {
 			isa = PBXGroup;
 			children = (
+				026975C62B77433100CFB9C7 /* DataStructures.swift */,
 				48D2ABB02B75C8CF00C00D2D /* Lottie Files */,
 				48E7DF002B72FC5100A6767A /* MLModels */,
 				02EF07122B72BF43009EADB3 /* Homecare-Front */,
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F16C952B73274C0034D40F /* EnergyConsumptionPieChartView.swift in Sources */,
+				026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */,
 				48B31E542B76CAE300BC52FE /* GlobalModel.swift in Sources */,
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
 				48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */,

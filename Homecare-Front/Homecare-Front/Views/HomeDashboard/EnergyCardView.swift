@@ -7,38 +7,40 @@
 
 import SwiftUI
 
+
+
 struct EnergyCardView: View {
+    @EnvironmentObject var energyData: EnergyData
+
     var body: some View {
-        VStack() {
-            
+        VStack {
             ZStack(alignment: .bottomTrailing) {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
                     .fill(Color.homecare)
-                
-                
-                
+
                 HStack {
                     Image("bolt.vector")
                         .padding(.horizontal, 16.0)
+
                     VStack(alignment: .leading) {
                         Spacer()
-                        
-                        
+
                         Text("Energía ahorrada")
                             .font(.caption)
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                         
-                        Text("0%")
+                        Text("\(energyData.energySavedPercentage)%")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .fontDesign(.rounded)
-                        
-                        Text("0 kWh")
+
+                       
+                        Text("\(energyData.kWhSaved) kWh")
                             .font(.title3)
                             .foregroundColor(.white.opacity(0.7))
-                        
+
                         HStack {
                             Spacer()
                             Image(systemName: "arrow.right.circle.fill")
@@ -47,15 +49,14 @@ struct EnergyCardView: View {
                         }
                     }
                     .padding(.leading, 10.0)
-                    
                 }.padding()
             }
-            
             .frame(height: 100)
         }
         .padding()
     }
 }
+
 
 #Preview {
     EnergyCardView()
