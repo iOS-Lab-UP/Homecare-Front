@@ -29,13 +29,13 @@ struct EnergyCardView: View {
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                         
-                        Text("40%")
+                        Text("0%")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .fontDesign(.rounded)
                         
-                        Text("30 kWh")
+                        Text("0 kWh")
                             .font(.title3)
                             .foregroundColor(.white.opacity(0.7))
                         

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RoomListView: View {
+    @State private var bulbCount: Int = 0
     let rooms: [Room] = [
         Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
         Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
@@ -34,13 +35,18 @@ struct RoomListView: View {
                 LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach(rooms, id: \.name) { room in
                         RoomEnergySquare(room: room)
-                            .frame(width: (UIScreen.main.bounds.width - (padding * 2) - spacing) / 2, height: 180)
+                            .frame(height: 180)
                             .cornerRadius(25)
-                            .padding(.bottom, spacing)
                     }
                 }
                 .padding(.horizontal)
+                BulbCounterCard(bulbCount: $bulbCount)
+                    .frame(height: 180)
+                    .padding(.horizontal, padding)
+                    .padding(.top, spacing)
             }
+            
+            
         }
     }
 }
@@ -68,6 +74,55 @@ struct RoomEnergySquare: View {
         }
     }
 }
+
+struct BulbCounterCard: View {
+    @Binding var bulbCount: Int
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .fill(Color.homecare)
+
+            VStack {
+                Text("Número de focos")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(.top)
+
+                HStack(spacing: 40) {
+                    Button(action: {
+                        if bulbCount > 0 { bulbCount -= 1 }
+                    }) {
+                        Image(systemName: "minus.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Text("\(bulbCount)")
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 80, alignment: .center)
+                    
+                    Button(action: {
+                        bulbCount += 1
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.green)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 180)
+        .shadow(radius: 5)
+        .padding(.horizontal)
+    }
+}
+
 
 
 #Preview {
