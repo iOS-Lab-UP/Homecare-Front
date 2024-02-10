@@ -23,7 +23,6 @@ struct ToolBar: View {
             }
             
             
-            // Raised button for the "Plus" action
             Button(action: { selectedTab = 3 }) {
                 Image(systemName: "plus")
                     .foregroundColor(.white)

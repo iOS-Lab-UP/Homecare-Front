@@ -18,10 +18,11 @@ struct EnergyConsumptionDashboardView: View {
                 .foregroundColor(.black)
                 .padding(.bottom, 20.0)
             
-            EnergyConsumptionPieChartView(percentage: 0.4, energyConsumed: 100)
+            EnergyConsumptionPieChartView()
                 .padding(.leading, 110.0)
                 .padding(.bottom, 20.0)
                 .foregroundColor(.black)
+                .environmentObject(EnergyData())
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.8), Color.blue.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))

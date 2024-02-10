@@ -8,11 +8,11 @@
 import Foundation
 
 class EnergyData: ObservableObject {
-    @Published var energySavedPercentage: Int
     @Published var kWhSaved: Int
+    @Published var kWhUsed: Int
     
-    init(energySavedPercentage: Int = 0, kWhSaved: Int = 0) {
-        self.energySavedPercentage = energySavedPercentage
+    init(kWhSaved: Int = 5, kWhUsed: Int = 50) {
         self.kWhSaved = kWhSaved
+        self.kWhUsed = kWhUsed
     }
 }
