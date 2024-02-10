@@ -43,6 +43,7 @@ enum Picker {
 struct UploadPhotoView: View{
     @EnvironmentObject var vm: ViewModel
     @State private var navigateToDashboard = false
+    @State private var showRoomsSheet = false
     var body: some View {
         NavigationView {
             VStack{
@@ -68,91 +69,96 @@ struct UploadPhotoView: View{
                     
                 }
                 Spacer()
-                HStack{
-                    if vm.image != nil{
-                        Button(action: {
-                            navigateToDashboard = true
-                        }){
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 20.0)
-                                    .foregroundStyle(Color.homecare)
-                                Text("Enviar foto")
-                                    .foregroundStyle(Color.white)
-                            }
-                            .frame(height: 60)
-                            .padding()
-                        }
-                        // NavigationLink is here, but it's hidden and only activated when navigateToDashboard is true
-                        .background(
-                            NavigationLink(destination: MainView(), isActive: $navigateToDashboard) {
-                                EmptyView()
-                            }
-                                .hidden()
-                        )
+                VStack{
+                    Button(action: {showRoomsSheet.toggle()}){
                         
-                        
-                        Menu {
-                            Button {
+                    }
+                    HStack{
+                        if vm.image != nil{
+                            Button(action: {
+                                navigateToDashboard = true
+                            }){
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20.0)
+                                        .foregroundStyle(Color.homecare)
+                                    Text("Enviar foto")
+                                        .foregroundStyle(Color.white)
+                                }
+                                .frame(height: 60)
+                                .padding()
+                            }
+                            // NavigationLink is here, but it's hidden and only activated when navigateToDashboard is true
+                            .background(
+                                NavigationLink(destination: MainView(), isActive: $navigateToDashboard) {
+                                    EmptyView()
+                                }
+                                    .hidden()
+                            )
+                            
+                            
+                            Menu {
+                                Button {
+                                    vm.source = .camera
+                                    vm.showPhotoPicker()
+                                } label: {
+                                    Label("Tomar otra foto", systemImage: "camera")
+                                }
+                                
+                                Button {
+                                    vm.source = .library
+                                    vm.showPhotoPicker()
+                                } label: {
+                                    Label("Elegir otra foto", systemImage: "photo")
+                                }
+                            } label: {
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 60, height: 60)
+                                        .foregroundStyle(Color.green.opacity(0.8))
+                                    
+                                    Image(systemName: "arrow.triangle.2.circlepath")
+                                        .foregroundStyle(Color.black)
+                                }
+                                .padding()
+                            }
+                            
+                            
+                        } else {
+                            
+                            Button(action: {
                                 vm.source = .camera
                                 vm.showPhotoPicker()
-                            } label: {
-                                Label("Tomar otra foto", systemImage: "camera")
+                            }){
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20.0)
+                                        .foregroundStyle(Color.homecare)
+                                    Text("Tomar foto")
+                                        .foregroundStyle(Color.white)
+                                }
+                                .frame(height: 60)
+                                .padding()
+                                
                             }
                             
-                            Button {
+                            Button(action: {
                                 vm.source = .library
                                 vm.showPhotoPicker()
-                            } label: {
-                                Label("Elegir otra foto", systemImage: "photo")
-                            }
-                        } label: {
-                            ZStack{
-                                Circle()
-                                    .frame(width: 60, height: 60)
-                                    .foregroundStyle(Color.green.opacity(0.8))
+                            }){
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 60, height: 60)
+                                        .foregroundStyle(Color.green.opacity(0.8))
+                                    
+                                    Image(systemName: "photo")
+                                        .foregroundStyle(Color.black)
+                                }
+                                .padding()
                                 
-                                Image(systemName: "arrow.triangle.2.circlepath")
-                                    .foregroundStyle(Color.black)
                             }
-                            .padding()
                         }
                         
-                        
-                    } else {
-                        
-                        Button(action: {
-                            vm.source = .camera
-                            vm.showPhotoPicker()
-                        }){
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 20.0)
-                                    .foregroundStyle(Color.homecare)
-                                Text("Tomar foto")
-                                    .foregroundStyle(Color.white)
-                            }
-                            .frame(height: 60)
-                            .padding()
-                            
-                        }
-                        
-                        Button(action: {
-                            vm.source = .library
-                            vm.showPhotoPicker()
-                        }){
-                            ZStack{
-                                Circle()
-                                    .frame(width: 60, height: 60)
-                                    .foregroundStyle(Color.green.opacity(0.8))
-                                
-                                Image(systemName: "photo")
-                                    .foregroundStyle(Color.black)
-                            }
-                            .padding()
-                            
-                        }
+                        Spacer()
                     }
-                    
-                    Spacer()
                 }
             }
             .background(Color.white)
@@ -164,6 +170,11 @@ struct UploadPhotoView: View{
                     .foregroundColor(.black
                     )
                 
+            }
+            .sheet(isPresented: $showRoomsSheet){
+                addToRoomsView()
+                    .presentationDetents([.medium,.large])
+                    .presentationDragIndicator(.visible)
             }
         }
         .background(Color.white) // Establece el color de fondo de la NavigationView a blanco
