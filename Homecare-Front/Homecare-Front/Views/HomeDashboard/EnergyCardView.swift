@@ -14,7 +14,7 @@ struct EnergyCardView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .fill(Color.homecare)
                 
                 HStack {
@@ -25,7 +25,7 @@ struct EnergyCardView: View {
                         Spacer()
                         
                         Text("Energía ahorrada")
-                            .font(.caption)
+                            .font(.title2)
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                         
@@ -42,15 +42,15 @@ struct EnergyCardView: View {
                         
                         HStack {
                             Spacer()
-                            Image(systemName: "arrow.right.circle.fill")
-                                .font(.system(size: 25, weight: .bold))
-                                .foregroundColor(.white)
+//                            Image(systemName: "arrow.right.circle.fill")
+//                                .font(.system(size: 25, weight: .bold))
+//                                .foregroundColor(.white)
                         }
                     }
                     .padding(.leading, 10.0)
                 }.padding()
             }
-            .frame(height: 100)
+            .frame(height: 60)
         }
         .padding()
     }

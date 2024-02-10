@@ -48,8 +48,7 @@ struct RoomEnergyCardView: View {
             Image(room.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 250, height: 300)
-                .cornerRadius(20)
+                .frame(width: 250, height: 250)
                 .overlay(
                     LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
                 )
@@ -66,6 +65,7 @@ struct RoomEnergyCardView: View {
             }
             .padding()
         }
+        .cornerRadius(20)
     }
 }
 

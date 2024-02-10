@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020759302B77E7E60032D3B1 /* SmarstStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */; };
 		026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026975C62B77433100CFB9C7 /* DataStructures.swift */; };
 		026975C92B7770BB00CFB9C7 /* SuggestionsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */; };
 		02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF07152B72BF43009EADB3 /* HomeView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmarstStackView.swift; sourceTree = "<group>"; };
 		026975C62B77433100CFB9C7 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCardView.swift; sourceTree = "<group>"; };
 		02EF07102B72BF43009EADB3 /* Homecare-Front.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homecare-Front.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,7 @@
 				02EF07152B72BF43009EADB3 /* HomeView.swift */,
 				48F16C962B7329D60034D40F /* EnergyCardView.swift */,
 				48F16C982B733E820034D40F /* RoomsCarrouselView.swift */,
+				0207592F2B77E7E60032D3B1 /* SmarstStackView.swift */,
 				026975C82B7770BB00CFB9C7 /* SuggestionsCardView.swift */,
 			);
 			path = HomeDashboard;
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F16C952B73274C0034D40F /* EnergyConsumptionPieChartView.swift in Sources */,
+				020759302B77E7E60032D3B1 /* SmarstStackView.swift in Sources */,
 				026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */,
 				48B31E542B76CAE300BC52FE /* GlobalModel.swift in Sources */,
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
