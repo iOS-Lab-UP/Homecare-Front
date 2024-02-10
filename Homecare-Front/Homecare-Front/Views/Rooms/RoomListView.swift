@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RoomListView: View {
-    @State private var bulbCount: Int = 0
+    @EnvironmentObject var energyData: EnergyData
     let rooms: [Room] = [
         Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
         Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
@@ -40,10 +40,11 @@ struct RoomListView: View {
                     }
                 }
                 .padding(.horizontal)
-                BulbCounterCard(bulbCount: $bulbCount)
+                BulbCounterCard()
                     .frame(height: 180)
                     .padding(.horizontal, padding)
                     .padding(.top, spacing)
+                    .environmentObject(EnergyData())
             }
             
             
@@ -76,7 +77,7 @@ struct RoomEnergySquare: View {
 }
 
 struct BulbCounterCard: View {
-    @Binding var bulbCount: Int
+    @EnvironmentObject var energyData: EnergyData
     
     var body: some View {
         ZStack {
@@ -92,21 +93,21 @@ struct BulbCounterCard: View {
 
                 HStack(spacing: 40) {
                     Button(action: {
-                        if bulbCount > 0 { bulbCount -= 1 }
+                        if energyData.numBulbs > 0 { energyData.numBulbs -= 1 }
                     }) {
                         Image(systemName: "minus.circle.fill")
                             .font(.largeTitle)
                             .foregroundColor(.red)
                     }
                     
-                    Text("\(bulbCount)")
+                    Text("\(energyData.numBulbs)")
                         .font(.system(size: 50))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .frame(width: 80, alignment: .center)
                     
                     Button(action: {
-                        bulbCount += 1
+                        energyData.numBulbs += 1
                     }) {
                         Image(systemName: "plus.circle.fill")
                             .font(.largeTitle)

@@ -11,8 +11,11 @@ class EnergyData: ObservableObject {
     @Published var kWhSaved: Int
     @Published var kWhUsed: Int
     
-    init(kWhSaved: Int = 5, kWhUsed: Int = 50) {
+    @Published var numBulbs: Int
+    
+    init(kWhSaved: Int = 0, kWhUsed: Int = 0, numBulbs: Int = 5) {
         self.kWhSaved = kWhSaved
         self.kWhUsed = kWhUsed
+        self.numBulbs = numBulbs
     }
 }
