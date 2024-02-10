@@ -79,6 +79,7 @@ struct MainHomecareApp: App {
     var viewModel = ViewModel()
     var body: some Scene {
         WindowGroup {
+            
             MainView()
                 .environmentObject(viewModel)
                 

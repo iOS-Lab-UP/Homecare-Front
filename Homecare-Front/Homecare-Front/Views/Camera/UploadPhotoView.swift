@@ -84,7 +84,7 @@ var body: some View {
                                     }
                                     // NavigationLink is here, but it's hidden and only activated when navigateToDashboard is true
                                     .background(
-                                        NavigationLink(destination: HomeView(), isActive: $navigateToDashboard) {
+                                        NavigationLink(destination: MainView(), isActive: $navigateToDashboard) {
                                             EmptyView()
                                         }
                                         .hidden()
