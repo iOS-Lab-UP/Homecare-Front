@@ -18,7 +18,7 @@ struct SmartStackView: View {
     
     @State private var offset: CGSize = .zero
     @State private var currentIndex: Int = 0
-
+    
     var body: some View {
         ZStack {
             ForEach(cards.indices.reversed(), id: \.self) { index in
@@ -43,7 +43,6 @@ struct SmartStackView: View {
                     .zIndex(self.currentIndex == index ? 1 : 0)
             }
         }
-        .padding()
     }
     
     private func changeCard(toRight: Bool) {
@@ -83,12 +82,14 @@ struct CardView: View {
                     }
                     
                     Spacer()
+                    Image(systemName: "arrow.right.circle.fill")
+                        .font(.system(size: 25, weight: .bold))
+                        .foregroundColor(.white)
                 }
                 .padding()
             }
-            .frame(height: 200)
+            .frame(height: 120)
         }
-        .padding()
     }
 }
 
