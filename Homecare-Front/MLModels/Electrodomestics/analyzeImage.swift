@@ -8,6 +8,8 @@
 import Foundation
 import CoreML
 import UIKit
+import Alamofire
+
 
 
 func analyzeImage(image: UIImage) {
@@ -32,7 +34,7 @@ func analyzeImage(image: UIImage) {
         
         let output = try model.prediction(input: input)
         
-        let top3Predictions = Array(output.targetProbability.sorted(by: { $0.value > $1.value }).prefix(3))
+        let top3Predictions = Array(output.targetProbability.sorted(by: { $0.value > $1.value }).prefix(4))
         
         // Print top 3 predictions for debugging purposes
         for (index, prediction) in top3Predictions.enumerated() {
@@ -41,21 +43,53 @@ func analyzeImage(image: UIImage) {
             print("\(index + 1). \(label): \(percentage)%")
         }
         
-        // Call the uploadDiagnosticImage function
-//        uploadDiagnosticImage(imageData: imageData, top3Predictions: top3Predictions) { result in
-//            switch result {
-//            case .success(let response):
-//                print("Success: \(response)")
-//
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
+        // Call the predict function grab the biggest value
+        let topElectrodomestic = top3Predictions[0].key
+        
+        let electrodomesticos: [String: Double] = [
+            "Tele": (0.1 + 0.4) / 2,
+            "microondas": (0.9 + 1.5) / 2,
+            "Frigobar": (0.2 + 0.4) / 2,
+            "Bombilla incandescente": (0.03 + 0.08) / 2,
+            "Bombilla LED": (0.003 + 0.012) / 2
+        ]
+        
+        let electrodomestic = electrodomesticos[topElectrodomestic]!
+        
+        
+        predict(electrodomestic: electrodomestic) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
+        
+
         
     } catch {
         print(error.localizedDescription)
     }
 }
+
+func predict(electrodomestic: Double, completion: @escaping (Error?) -> Void) {
+    let parameters: [String: Any] = [
+        "electrodomestic": electrodomestic,
+    ]
+    
+    let headers: HTTPHeaders = [
+        "Content-Type": "application/json"
+    ]
+    
+    AF.request("https://api.luishomeserver.com/predict", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
+        switch response.result {
+        case .success:
+            completion(nil)
+        case .failure(let error):
+            completion(error)
+        }
+    }
+}
+
 
 
 extension UIImage {

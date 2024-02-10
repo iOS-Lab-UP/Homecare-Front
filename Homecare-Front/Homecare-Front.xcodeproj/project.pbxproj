@@ -11,7 +11,7 @@
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
 		483FDDC32B76DC6400B316B2 /* analyzeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC22B76DC6400B316B2 /* analyzeImage.swift */; };
-		483FDDC52B76DCE500B316B2 /* ElectroDomesticCV.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC42B76DCE500B316B2 /* ElectroDomesticCV.mlpackage */; };
+		483FDDC72B77162800B316B2 /* ElectroDomesticCV.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */; };
 		48B31E4C2B76C66C00BC52FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48B31E4B2B76C66C00BC52FE /* Alamofire */; };
 		48B31E4E2B76C71E00BC52FE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B31E4D2B76C71E00BC52FE /* NetworkManager.swift */; };
 		48B31E512B76C74B00BC52FE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48B31E502B76C74B00BC52FE /* KeychainSwift */; };
@@ -44,7 +44,7 @@
 		02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITests.swift; sourceTree = "<group>"; };
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		483FDDC22B76DC6400B316B2 /* analyzeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = analyzeImage.swift; sourceTree = "<group>"; };
-		483FDDC42B76DCE500B316B2 /* ElectroDomesticCV.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = ElectroDomesticCV.mlpackage; sourceTree = "<group>"; };
+		483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ElectroDomesticCV.mlmodel; sourceTree = "<group>"; };
 		487D887A2B7611E9009568AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		48B31E4D2B76C71E00BC52FE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = SOURCE_ROOT; };
 		48B31E532B76CAE300BC52FE /* GlobalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalModel.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		483FDDC12B76DC5400B316B2 /* Electrodomestics */ = {
 			isa = PBXGroup;
 			children = (
-				483FDDC42B76DCE500B316B2 /* ElectroDomesticCV.mlpackage */,
+				483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */,
 				483FDDC22B76DC6400B316B2 /* analyzeImage.swift */,
 			);
 			path = Electrodomestics;
@@ -324,6 +324,7 @@
 				48B31E4E2B76C71E00BC52FE /* NetworkManager.swift in Sources */,
 				48F16C972B7329D60034D40F /* EnergyCardView.swift in Sources */,
 				48C335AF2B75AD740048E770 /* CFEOCRView.swift in Sources */,
+				483FDDC72B77162800B316B2 /* ElectroDomesticCV.mlmodel in Sources */,
 				48D2ABEC2B75CB1D00C00D2D /* LottieView.swift in Sources */,
 				48E7DF092B73015900A6767A /* ToolBar.swift in Sources */,
 				48E7DF072B72FED200A6767A /* MainHomecareApp.swift in Sources */,
@@ -331,7 +332,6 @@
 				48F16C992B733E820034D40F /* RoomsCarrouselView.swift in Sources */,
 				48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
-				483FDDC52B76DCE500B316B2 /* ElectroDomesticCV.mlpackage in Sources */,
 				48C335AD2B75AD4A0048E770 /* RoomListView.swift in Sources */,
 				483FDDC32B76DC6400B316B2 /* analyzeImage.swift in Sources */,
 				48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */,
