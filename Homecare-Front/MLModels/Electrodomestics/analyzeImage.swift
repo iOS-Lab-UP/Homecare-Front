@@ -73,14 +73,14 @@ func analyzeImage(image: UIImage) {
 
 func predict(electrodomestic: Double, completion: @escaping (Error?) -> Void) {
     let parameters: [String: Any] = [
-        "electrodomestic": electrodomestic,
+        "kwh": electrodomestic,
     ]
     
     let headers: HTTPHeaders = [
         "Content-Type": "application/json"
     ]
     
-    AF.request("https://api.luishomeserver.com/predict", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
+    AF.request(APIEndpoints.predict, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
         switch response.result {
         case .success:
             completion(nil)
