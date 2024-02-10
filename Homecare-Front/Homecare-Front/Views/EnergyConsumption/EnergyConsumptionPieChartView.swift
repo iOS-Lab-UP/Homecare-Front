@@ -17,7 +17,7 @@ struct EnergyConsumptionPieChartView: View {
                 .foregroundColor(Color.blue.opacity(0.2))
             
             Circle()
-                .trim(from: 0, to: 100)
+                .trim(from: 0, to: 170)
                 .stroke(
                     LinearGradient(
                         gradient: Gradient(colors: [Color.blue.opacity(0.4), Color.green]),

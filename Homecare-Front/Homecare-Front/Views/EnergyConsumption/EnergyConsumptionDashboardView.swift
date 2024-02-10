@@ -9,6 +9,11 @@ import SwiftUI
 import DGCharts
 
 struct EnergyConsumptionDashboardView: View {
+    var chartDataEntries = [ChartDataEntry]()
+    var consumptionPerMonth = GlobalDataModel.shared.predictionData
+    
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             
@@ -39,25 +44,28 @@ struct EnergyConsumptionDashboardView: View {
                     .padding(.vertical, 5)
             }.frame(width: 350, height: 80)
             
+
+
+
+            let chartDataEntries = generateChartDataEntries(withPredictions: consumptionPerMonth)
+
             
             
-            EnergyConsumptionLineChartViewWrapper(yValues: [
-                ChartDataEntry(x: 1.0, y: 10.0),
-                ChartDataEntry(x: 2.0, y: 20.0),
-                ChartDataEntry(x: 3.0, y: 25.0),
-                ChartDataEntry(x: 4.0, y: 10.0),
-                ChartDataEntry(x: 5.0, y: 12.0),
-                ChartDataEntry(x: 6.0, y: 15.0),
-                ChartDataEntry(x: 7.0, y: 8.0),
-                ChartDataEntry(x: 8.0, y: 5.0),
-                ChartDataEntry(x: 9.0, y: 28.0),
-                ChartDataEntry(x: 10.0, y: 20.0),
-                ChartDataEntry(x: 11.0, y: 35.0),
-                ChartDataEntry(x: 12.0, y: 20.0)
-            ])
+            EnergyConsumptionLineChartViewWrapper(yValues: chartDataEntries)
         }.padding()
         
     }
+    
+    func generateChartDataEntries(withPredictions predictions: [Double]) -> [ChartDataEntry] {
+        // Ensure the predictions array starts with x values from 1.0, incrementing by 1 for each prediction
+        let entries = predictions.enumerated().map { index, prediction in
+            ChartDataEntry(x: Double(index + 1), y: prediction)
+        }
+        return entries
+    }
+
+
+    
 }
 
 #Preview {

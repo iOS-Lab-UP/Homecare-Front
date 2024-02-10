@@ -54,12 +54,19 @@ func analyzeImage(image: UIImage) {
             "Bombilla LED": (0.003 + 0.012) / 2
         ]
         
-        let electrodomestic = electrodomesticos[topElectrodomestic]!
+        let electrodomestic = electrodomesticos[topElectrodomestic] ?? 0.0
         
-        
-        predict(electrodomestic: electrodomestic) { error in
-            if let error = error {
-                print(error.localizedDescription)
+        predict(electrodomestic: electrodomestic) { result in
+            switch result {
+            case .success(let response):
+                if let data = response.data {
+                    GlobalDataModel.shared.predictionData = data.map { Double($0) }
+                    print("Prediction data: \(GlobalDataModel.shared.predictionData)")
+                } else {
+                    print("No data received")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
             }
         }
 
@@ -71,7 +78,7 @@ func analyzeImage(image: UIImage) {
     }
 }
 
-func predict(electrodomestic: Double, completion: @escaping (Error?) -> Void) {
+func predict(electrodomestic: Double, completion: @escaping (Result<APIResponse<[Float]>, Error>) -> Void) {
     let parameters: [String: Any] = [
         "kwh": electrodomestic,
     ]
@@ -82,13 +89,20 @@ func predict(electrodomestic: Double, completion: @escaping (Error?) -> Void) {
     
     AF.request(APIEndpoints.predict, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
         switch response.result {
-        case .success:
-            completion(nil)
+        case .success(let data):
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(APIResponse<[Float]>.self, from: data!)
+                completion(.success(responseData))
+            } catch {
+                completion(.failure(error))
+            }
         case .failure(let error):
-            completion(error)
+            completion(.failure(error))
         }
     }
 }
+
 
 
 
