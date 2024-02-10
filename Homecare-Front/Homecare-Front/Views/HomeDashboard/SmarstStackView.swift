@@ -5,21 +5,18 @@ struct Card: Identifiable {
     var title: String
     var value: String
     var icon: String
+    var backgroundColor: Color
 }
 
 struct SmartStackView: View {
     @EnvironmentObject var energyData: EnergyData
     
-    @State private var cards: [Card] = [
-        Card(title: "Energía Ahorrada", value: "30", icon: "leaf.arrow.circlepath"),
-        Card(title: "Consumo Actual", value: "10", icon: "sun.max.fill"),
-        Card(title: "Meta de Ahorro", value: "60 kWh", icon: "moon.stars.fill")
-    ]
-    
     @State private var offset: CGSize = .zero
     @State private var currentIndex: Int = 0
     
     var body: some View {
+        let cards = generateCards()
+        
         ZStack {
             ForEach(cards.indices.reversed(), id: \.self) { index in
                 CardView(card: cards[index])
@@ -32,9 +29,9 @@ struct SmartStackView: View {
                             }
                             .onEnded { _ in
                                 if self.offset.width > 100 {
-                                    self.changeCard(toRight: true)
+                                    self.changeCard(toRight: true, count: cards.count)
                                 } else if self.offset.width < -100 {
-                                    self.changeCard(toRight: false)
+                                    self.changeCard(toRight: false, count: cards.count)
                                 }
                                 self.offset = .zero
                             }
@@ -43,13 +40,23 @@ struct SmartStackView: View {
                     .zIndex(self.currentIndex == index ? 1 : 0)
             }
         }
+        .padding()
     }
     
-    private func changeCard(toRight: Bool) {
+    private func generateCards() -> [Card] {
+        return [
+            Card(title: "Energía Ahorrada", value: "\(formatValue(energyData.percentageSaved))%", icon: "lightswitch.off", backgroundColor: Color.mint),
+            Card(title: "Consumo Actual", value: "\(formatValue(Double(energyData.kWhUsed))) kWh", icon: "bolt.fill", backgroundColor: Color.blue),
+            Card(title: "Emisiones Generadas", value: "\(formatValue(energyData.co2)) kgCO2/kWh", icon: "smoke.fill", backgroundColor: Color.teal)
+        ]
+    }
+    
+    
+    private func changeCard(toRight: Bool, count: Int) {
         if toRight {
-            currentIndex = currentIndex < cards.count - 1 ? currentIndex + 1 : 0
+            currentIndex = currentIndex < count - 1 ? currentIndex + 1 : 0
         } else {
-            currentIndex = currentIndex > 0 ? currentIndex - 1 : cards.count - 1
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : count - 1
         }
     }
 }
@@ -59,23 +66,23 @@ struct CardView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottomTrailing) {
+            ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .fill(Color.homecare)
-                
-                HStack(spacing: 20) {
+                    .fill(card.backgroundColor)
+                HStack(spacing: 10) {
                     Image(systemName: card.icon)
                         .font(.largeTitle)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.white)
                     
                     VStack(alignment: .leading) {
                         Text(card.title)
-                            .font(.title2)
+                            .font(.system(size: 20))
+                            .bold()
                             .foregroundColor(.white)
                             .fontWeight(.bold)
-                        
+                    
                         Text(card.value)
-                            .font(.system(size: 50))
+                            .font(.system(size: 20))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .fontDesign(.rounded)
@@ -91,6 +98,10 @@ struct CardView: View {
             .frame(height: 120)
         }
     }
+}
+
+func formatValue(_ value: Double) -> String {
+    return String(format: "%.2f", value)
 }
 
 struct SmartStackView_Previews: PreviewProvider {

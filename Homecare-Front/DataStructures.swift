@@ -21,16 +21,6 @@ class EnergyData: ObservableObject {
     
     @Published var rooms: [Room] = []
     
-    
-    var kWhSaved: Int = 0 { // TODO: Determine
-        willSet {
-            objectWillChange.send()
-        }
-        didSet {
-            updateRooms()
-        }
-    }
-    
     var numBulbs: Int = 0 {
         willSet {
             objectWillChange.send()
@@ -95,11 +85,19 @@ class EnergyData: ObservableObject {
     }
     
     var bulbs_kWH: Int {
-        Int(Double(numBulbs) * 0.045 * 8 * 60)
+        Int(Double(numBulbs) * 0.045 * 8 * 30)
     }
     
     var kWhUsed: Int {
         bulbs_kWH + living_room_kWH + kitchen_kWH + bathroom_kWH + bedroom_kWH + home_office_kWH + garden_kWH
+    }
+    
+    var percentageSaved: Double {
+        ((200 - Double(kWhUsed)) / 200 ) * 100
+    }
+    
+    var co2 : Double {
+        0.423 * Double(kWhUsed)
     }
     
     init() {

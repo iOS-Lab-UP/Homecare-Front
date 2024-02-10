@@ -24,21 +24,21 @@ struct EnergyCardView: View {
                     VStack(alignment: .leading) {
                         Spacer()
                         
-                        Text("Energía ahorrada")
-                            .font(.title2)
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                        
-                        Text("\(energyData.kWhUsed != 0 ? Double(energyData.kWhSaved) * 100 / Double(energyData.kWhUsed) : 0, specifier: "%.1f")%")
-                            .font(.system(size: 50))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .fontDesign(.rounded)
-                        
-                        
-                        Text("\(energyData.kWhSaved) kWh")
-                            .font(.title3)
-                            .foregroundColor(.white.opacity(0.7))
+//                        Text("Energía ahorrada")
+//                            .font(.title2)
+//                            .foregroundColor(.white)
+//                            .fontWeight(.bold)
+//                        
+//                        Text("\(energyData.kWhUsed != 0 ? Double(energyData.kWhSaved) * 100 / Double(energyData.kWhUsed) : 0, specifier: "%.1f")%")
+//                            .font(.system(size: 50))
+//                            .fontWeight(.bold)
+//                            .foregroundColor(.white)
+//                            .fontDesign(.rounded)
+//                        
+//                        
+//                        Text("\(energyData.kWhSaved) kWh")
+//                            .font(.title3)
+//                            .foregroundColor(.white.opacity(0.7))
                         
                         HStack {
                             Spacer()

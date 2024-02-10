@@ -28,12 +28,12 @@ struct SuggestionsCardView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("EcoGenio")
-                        .font(.title2)
+                        .font(.system(size: 26))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     
                     Text(globalDataModel.advicePrompt)
-                        .font(.caption)
+                        .font(.body)
                         .foregroundColor(.white.opacity(0.9))
                         .frame(width: 240, alignment: .leading)
                 }

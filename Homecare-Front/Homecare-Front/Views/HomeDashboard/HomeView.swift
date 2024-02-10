@@ -23,7 +23,6 @@ struct HomeView: View {
                             .font(.subheadline)
                             .foregroundColor(.black)
                     }
-                    .padding([.leading, .trailing])
                     
                     Spacer()
                     
@@ -33,19 +32,18 @@ struct HomeView: View {
                         .overlay(Circle().stroke(Color.white, lineWidth: 1))
                         .font(.system(size: 20))
                 }
-                .padding(.all, 20)
-                .padding(.bottom, 10)
+                .padding()
+                .padding(.top, 20)
+                .padding(.bottom, 5)
                 
                 SuggestionsCardView()
-                    .padding(.bottom, 20)
                 
-//                EnergyCardView()
+                //                EnergyCardView()
                 SmartStackView()
-                    .padding(.bottom, 30)
                     .padding(.leading, 10)
                     .padding(.trailing, 10 )
                 RoomsCarrouselView()
-
+                
             }
             .background(Color.white)
         }
