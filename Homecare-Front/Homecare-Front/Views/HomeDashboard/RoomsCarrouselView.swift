@@ -7,22 +7,9 @@
 
 import SwiftUI
 
-struct Room {
-    var name: String
-    var imageName: String
-    var energyConsumption: String
-}
-
 
 struct RoomsCarrouselView: View {
-    let rooms: [Room] = [
-        Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
-        Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
-        Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "100 kWh"),
-        Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "250 kWh"),
-        Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
-        Room(name: "Jardín", imageName: "garden", energyConsumption: "50 kWh")
-    ]
+    @EnvironmentObject var energyData: EnergyData
     
     var body: some View {
         VStack(alignment: .leading){
@@ -38,7 +25,9 @@ struct RoomsCarrouselView: View {
         ScrollView(.horizontal, showsIndicators: true)
         {
             HStack(spacing:10){
-                ForEach(rooms, id: \.name) { room in RoomEnergyCardView(room: room) }
+                ForEach(energyData.rooms, id: \.id) { room in
+                    RoomEnergyCardView(room: room)
+                }
             }.padding()
         }
         

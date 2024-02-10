@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct RoomListView: View {
-    let rooms: [Room] = [
-        Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "200 kWh"),
-        Room(name: "Cocina", imageName: "kitchen", energyConsumption: "150 kWh"),
-        Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "100 kWh"),
-        Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "250 kWh"),
-        Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "300 kWh"),
-        Room(name: "Jardín", imageName: "garden", energyConsumption: "50 kWh")
-    ]
+    @EnvironmentObject var energyData: EnergyData
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 20), count: 2)
     private let spacing: CGFloat = 20
@@ -32,7 +25,7 @@ struct RoomListView: View {
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: spacing) {
-                    ForEach(rooms, id: \.name) { room in
+                    ForEach(energyData.rooms, id: \.id) { room in
                         RoomEnergySquare(room: room)
                             .frame(height: 180)
                             .cornerRadius(25)
