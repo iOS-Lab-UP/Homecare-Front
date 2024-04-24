@@ -39,8 +39,7 @@ struct ARViewContainer: UIViewRepresentable {
 
             let planeMesh = MeshResource.generatePlane(width: 0.4, depth: 0.3)
             let planeEntity = ModelEntity(mesh: planeMesh, materials: [material])
-            planeEntity.orientation = simd_quatf(angle: .pi / 2, axis: [0, 1, 0])
-            planeEntity.position = [0, 0, 0]  // Start at anchor center; adjust as needed
+
 
             // Since we're working with vertical planes, the plane entity should be oriented correctly by default
             // If not, adjust the orientation here

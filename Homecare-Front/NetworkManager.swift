@@ -38,6 +38,8 @@ struct APIEndpoints {
    static let predict = baseURL + "/predict"
     
     static let advicePrompt = baseURL + "/generate-motivational-phrase"
+    
+    static let uploadImage = baseURL + "/generate"
 }
 
 /// `NetworkManager` handles all network calls to the Genesis API.

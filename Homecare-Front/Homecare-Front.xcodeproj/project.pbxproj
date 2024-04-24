@@ -15,6 +15,7 @@
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
 		165AC0BB2B78177100271E91 /* addToRoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC0BA2B78177100271E91 /* addToRoomsView.swift */; };
 		48184C092BD8C222004A87CA /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48184C082BD8C222004A87CA /* ARView.swift */; };
+		48184C0C2BD97084004A87CA /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48184C0B2BD97084004A87CA /* GoogleMapsView.swift */; };
 		483FDDC32B76DC6400B316B2 /* analyzeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC22B76DC6400B316B2 /* analyzeImage.swift */; };
 		483FDDC72B77162800B316B2 /* ElectroDomesticCV.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */; };
 		483FDDC92B78358A00B316B2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FDDC82B78358A00B316B2 /* Launch Screen.storyboard */; };
@@ -54,6 +55,7 @@
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		165AC0BA2B78177100271E91 /* addToRoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addToRoomsView.swift; sourceTree = "<group>"; };
 		48184C082BD8C222004A87CA /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		48184C0B2BD97084004A87CA /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
 		483FDDC22B76DC6400B316B2 /* analyzeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = analyzeImage.swift; sourceTree = "<group>"; };
 		483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ElectroDomesticCV.mlmodel; sourceTree = "<group>"; };
 		483FDDC82B78358A00B316B2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			path = AR;
 			sourceTree = "<group>";
 		};
+		48184C0A2BD97076004A87CA /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				48184C0B2BD97084004A87CA /* GoogleMapsView.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		483FDDC12B76DC5400B316B2 /* Electrodomestics */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48184C0A2BD97076004A87CA /* Maps */,
 				48184C072BD8C204004A87CA /* AR */,
 				48D2ABAD2B75C81000C00D2D /* Camera */,
 				48C335AB2B75AD3B0048E770 /* Rooms */,
@@ -364,6 +375,7 @@
 				48C335AA2B75ACB60048E770 /* SettingsView.swift in Sources */,
 				48E7DEFF2B72FC2100A6767A /* ZoomableScrollView.swift in Sources */,
 				165AC0BB2B78177100271E91 /* addToRoomsView.swift in Sources */,
+				48184C0C2BD97084004A87CA /* GoogleMapsView.swift in Sources */,
 				48C335AD2B75AD4A0048E770 /* RoomListView.swift in Sources */,
 				483FDDC32B76DC6400B316B2 /* analyzeImage.swift in Sources */,
 				48C3359E2B754FA10048E770 /* EnergyConsumptionLineChartView.swift in Sources */,

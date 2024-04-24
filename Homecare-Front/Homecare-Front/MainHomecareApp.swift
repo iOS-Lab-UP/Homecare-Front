@@ -22,7 +22,7 @@ struct MainView: View {
             case 1:
                 HomeView()
             case 2:
-                EnergyConsumptionDashboardView()
+                MapView()
             case 3:
                 
                 UploadPhotoView()
