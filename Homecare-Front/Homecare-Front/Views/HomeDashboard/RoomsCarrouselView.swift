@@ -13,7 +13,7 @@ struct RoomsCarrouselView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Habitaciones")
+            Text("Promociones")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
