@@ -14,6 +14,7 @@
 		02EF07182B72BF47009EADB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF07172B72BF47009EADB3 /* Assets.xcassets */; };
 		02EF071B2B72BF47009EADB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EF071A2B72BF47009EADB3 /* Preview Assets.xcassets */; };
 		165AC0BB2B78177100271E91 /* addToRoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC0BA2B78177100271E91 /* addToRoomsView.swift */; };
+		48184C092BD8C222004A87CA /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48184C082BD8C222004A87CA /* ARView.swift */; };
 		483FDDC32B76DC6400B316B2 /* analyzeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC22B76DC6400B316B2 /* analyzeImage.swift */; };
 		483FDDC72B77162800B316B2 /* ElectroDomesticCV.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */; };
 		483FDDC92B78358A00B316B2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FDDC82B78358A00B316B2 /* Launch Screen.storyboard */; };
@@ -52,6 +53,7 @@
 		02EF072E2B72BF47009EADB3 /* Homecare_FrontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITests.swift; sourceTree = "<group>"; };
 		02EF07302B72BF47009EADB3 /* Homecare_FrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homecare_FrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		165AC0BA2B78177100271E91 /* addToRoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addToRoomsView.swift; sourceTree = "<group>"; };
+		48184C082BD8C222004A87CA /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		483FDDC22B76DC6400B316B2 /* analyzeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = analyzeImage.swift; sourceTree = "<group>"; };
 		483FDDC62B77162800B316B2 /* ElectroDomesticCV.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ElectroDomesticCV.mlmodel; sourceTree = "<group>"; };
 		483FDDC82B78358A00B316B2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			path = "Homecare-FrontUITests";
 			sourceTree = "<group>";
 		};
+		48184C072BD8C204004A87CA /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				48184C082BD8C222004A87CA /* ARView.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		483FDDC12B76DC5400B316B2 /* Electrodomestics */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		48E7DF052B72FD9700A6767A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48184C072BD8C204004A87CA /* AR */,
 				48D2ABAD2B75C81000C00D2D /* Camera */,
 				48C335AB2B75AD3B0048E770 /* Rooms */,
 				48F16C9A2B7548820034D40F /* EnergyConsumption */,
@@ -337,6 +348,7 @@
 				026975C72B77433200CFB9C7 /* DataStructures.swift in Sources */,
 				48B31E542B76CAE300BC52FE /* GlobalModel.swift in Sources */,
 				48E7DEFD2B72FBF100A6767A /* ImagePicker.swift in Sources */,
+				48184C092BD8C222004A87CA /* ARView.swift in Sources */,
 				48C335A82B756E010048E770 /* EnergyConsumptionDashboardView.swift in Sources */,
 				02EF07162B72BF43009EADB3 /* HomeView.swift in Sources */,
 				48B31E4E2B76C71E00BC52FE /* NetworkManager.swift in Sources */,

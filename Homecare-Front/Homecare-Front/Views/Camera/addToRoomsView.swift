@@ -9,48 +9,36 @@ import SwiftUI
 
 struct addToRoomsView: View {
     
-    @State var rooms = [1,2,3]
-    
+    @State private var inputText: String = ""
+    @State private var showARView: Bool = false  // State to control modal presentation
+
     var body: some View {
-        List{
-            ForEach(rooms.indices){
-                room in
-                
-                ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)){
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundStyle(Color.gray.opacity(0.2))
-                    HStack{
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.blue, lineWidth: 1)
-                                
-                            
-                            Image(systemName: "house")
-                                .foregroundStyle(Color.blue)
-                                .font(.title2)
-                            
-                            
-                        }
-                        .frame(width: 55, height: 55)
-                        
-                        VStack(alignment: .leading){
-                            Text("Living Rom")
-                                .bold()
-                            Text("x accesorios")
-                        }
-                    }
-                    .padding()
-                }
-                .frame(height: 50)
-                .padding(.vertical, 10)
-                .listRowSeparator(.hidden)
-                
+        VStack {
+            TextField("Enter your text here", text: $inputText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            Button("Upload and Show AR") {
+                self.showARView = true  // Toggle visibility of AR view
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .sheet(isPresented: $showARView) { // Present AR view as a modal sheet
+                ARViewContainer()
             }
         }
-        .listStyle(.plain)
     }
+}
+
+func uploadText(inputText: String) {
+    // Function to upload the text to the rooms
+    ARViewContainer().edgesIgnoringSafeArea(.all)
 }
 
 #Preview {
     addToRoomsView()
 }
+
+
