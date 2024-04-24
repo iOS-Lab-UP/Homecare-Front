@@ -171,9 +171,11 @@ struct UploadPhotoView: View{
                 
             }
             .sheet(isPresented: $showRoomsSheet){
-                addToRoomsView()
-                    .presentationDetents([.medium,.large])
-                    .presentationDragIndicator(.visible)
+                if let image = vm.image {
+                    addToRoomsView(selectedImage: .constant(image)) // Pass the image as a binding
+                        .presentationDetents([.medium, .large])
+                        .presentationDragIndicator(.visible)
+                }
             }
         }
         .background(Color.white) // Establece el color de fondo de la NavigationView a blanco
