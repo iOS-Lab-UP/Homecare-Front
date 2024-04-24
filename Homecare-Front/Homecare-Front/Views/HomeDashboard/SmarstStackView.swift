@@ -68,7 +68,7 @@ struct SmartStackView: View {
     private func generateCards() -> [Card] {
         return [
             Card(title: "Post nuevos", value: "10 Post nuevos", icon: "newspaper.fill", backgroundColor: Color(hex: "#E43C3C")), // Ejemplo con un rojo tomate
-            Card(title: "Consumo Actual", value: "\(formatValue(Double(energyData.kWhUsed))) kWh", icon: "bolt.fill", backgroundColor: Color(hex: "#FFC038")), // Un azul acero
+            Card(title: "Puntos (inserte nombre de la app) by oxxo ", value: "\(formatValue(Double(energyData.kWhUsed))) kWh", icon: "bolt.fill", backgroundColor: Color(hex: "#FFC038")), // Un azul acero
         ]
     }
 
