@@ -22,7 +22,6 @@ class GlobalDataModel: ObservableObject {
     @Published var predictionData: [Double] = []
     @Published var advicePrompt: String = ""
     // image
-    @Published var selectedImage: UIImage?
     @Published var advertisement: UIImage?
 
     private init() {} // Private initializer to enforce singleton usage
@@ -61,6 +60,7 @@ func decodeBase64ToImage(base64String: String) -> UIImage? {
         .replacingOccurrences(of: "data:image/png;base64,", with: "")
 
     if let imageData = Data(base64Encoded: base64StringProcessed, options: .ignoreUnknownCharacters) {
+        print("Image data decoded successfully.")
         return UIImage(data: imageData)
     } else {
         return nil
@@ -88,12 +88,10 @@ func uploadImage(title: String, description: String, image: UIImage, completion:
             do {
                 if let jsonData = data {
                     let uploadResponse = try JSONDecoder().decode(UploadResponse.self, from: jsonData)
-                    print("Success with JSON: \(uploadResponse)")
                     if let base64Image = uploadResponse.image {
                         DispatchQueue.main.async {
                             if let decodedImage = decodeBase64ToImage(base64String: base64Image) {
                                 GlobalDataModel.shared.advertisement = decodedImage
-                                print(GlobalDataModel.shared.advertisement)
                                 completion(.success(decodedImage))
                             } else {
                                 print("Failed to decode image.")
