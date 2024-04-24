@@ -33,7 +33,7 @@ struct MainView: View {
                 
                 
             case 5:
-                SettingsView()
+                ARViewContainer()
                 
             default:
                 HomeView()

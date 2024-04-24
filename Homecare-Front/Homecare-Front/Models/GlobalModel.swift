@@ -11,15 +11,19 @@ import SwiftUI
 import UIKit
 
 
+struct UploadResponse: Codable {
+    let success: Bool
+    let image: String?
+}
+
 
 class GlobalDataModel: ObservableObject {
     static let shared = GlobalDataModel()
     @Published var predictionData: [Double] = []
     @Published var advicePrompt: String = ""
     // image
-    @Published var selectedImage: UIImage?
     @Published var advertisement: UIImage?
-    
+
     private init() {} // Private initializer to enforce singleton usage
     
     func updateAdvicePrompt(newPrompt: String) {
@@ -49,23 +53,69 @@ func convertImageToBase64String(img: UIImage) -> String {
     return imageData.base64EncodedString(options: .lineLength64Characters)
 }
 
-func uploadIMage(title: String, description: String, image: UIImage) {
+func decodeBase64ToImage(base64String: String) -> UIImage? {
+    // Sometimes, the Base64 string may come prefixed with a data URI scheme that needs to be removed.
+    let base64StringProcessed = base64String
+        .replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
+        .replacingOccurrences(of: "data:image/png;base64,", with: "")
+
+    if let imageData = Data(base64Encoded: base64StringProcessed, options: .ignoreUnknownCharacters) {
+        print("Image data decoded successfully.")
+        return UIImage(data: imageData)
+    } else {
+        return nil
+    }
+}
+
+
+
+func uploadImage(title: String, description: String, image: UIImage, completion: @escaping (Result<Any, AFError>) -> Void) {
     let base64Image = convertImageToBase64String(img: image)
-    
-    // Constructing the parameters dictionary
+
     let parameters: [String: Any] = [
         "title": title,
         "description": description,
         "image": base64Image
     ]
-    
-    // Sending request with Alamofire
-    AF.request(APIEndpoints.uploadImage, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+
+    let headers: HTTPHeaders = [
+        "Content-Type": "application/json"
+    ]
+
+    AF.request(APIEndpoints.uploadImage, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
         switch response.result {
-        case .success(let value):
-            print("Success: \(value)")
+        case .success(let data):
+            do {
+                if let jsonData = data {
+                    let uploadResponse = try JSONDecoder().decode(UploadResponse.self, from: jsonData)
+                    if let base64Image = uploadResponse.image {
+                        DispatchQueue.main.async {
+                            if let decodedImage = decodeBase64ToImage(base64String: base64Image) {
+                                GlobalDataModel.shared.advertisement = decodedImage
+                                completion(.success(decodedImage))
+                            } else {
+                                print("Failed to decode image.")
+                                completion(.failure(AFError.responseValidationFailed(reason: .dataFileNil)))
+                            }
+                        }
+                    } else {
+                        print("No image data found in response.")
+                        completion(.failure(AFError.responseValidationFailed(reason: .dataFileNil)))
+                    }
+                } else {
+                    throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+                }
+            } catch let error {
+                print("Decoding failure: \(error)")
+                completion(.failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error))))
+            }
         case .failure(let error):
-            print("Error: \(error)")
+            print("Network request failure: \(error)")
+            completion(.failure(error))
         }
     }
+
+
+
 }
+

@@ -7,7 +7,7 @@ struct ARExperienceView: View {
     var image: UIImage
     
     var body: some View {
-        ARViewContainer(selectedImage: image)
+        ARViewContainer()
     }
 }
 
@@ -15,7 +15,7 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {
     }
     
-    var selectedImage: UIImage?
+    var selectedImage: UIImage? = GlobalDataModel.shared.advertisement
 
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
@@ -99,4 +99,3 @@ struct ARViewContainer: UIViewRepresentable {
           }
       }
   }
-
