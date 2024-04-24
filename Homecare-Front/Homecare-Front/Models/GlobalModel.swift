@@ -24,7 +24,7 @@ class GlobalDataModel: ObservableObject {
     // image
     @Published var selectedImage: UIImage?
     @Published var advertisement: UIImage?
-    
+
     private init() {} // Private initializer to enforce singleton usage
     
     func updateAdvicePrompt(newPrompt: String) {
@@ -55,8 +55,9 @@ func convertImageToBase64String(img: UIImage) -> String {
 }
 
 func decodeBase64ToImage(base64String: String) -> UIImage? {
-    // Check for and remove the Data URI scheme prefix if necessary
-    let base64StringProcessed = base64String.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
+    // Sometimes, the Base64 string may come prefixed with a data URI scheme that needs to be removed.
+    let base64StringProcessed = base64String
+        .replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
         .replacingOccurrences(of: "data:image/png;base64,", with: "")
 
     if let imageData = Data(base64Encoded: base64StringProcessed, options: .ignoreUnknownCharacters) {
@@ -65,6 +66,7 @@ func decodeBase64ToImage(base64String: String) -> UIImage? {
         return nil
     }
 }
+
 
 
 func uploadImage(title: String, description: String, image: UIImage, completion: @escaping (Result<Any, AFError>) -> Void) {
@@ -84,16 +86,24 @@ func uploadImage(title: String, description: String, image: UIImage, completion:
         switch response.result {
         case .success(let data):
             do {
-                // Attempt to decode the response data using JSONDecoder
                 if let jsonData = data {
                     let uploadResponse = try JSONDecoder().decode(UploadResponse.self, from: jsonData)
                     print("Success with JSON: \(uploadResponse)")
-                    if let base64Image = uploadResponse.image, let decodedImage = decodeBase64ToImage(base64String: base64Image) {
-                        GlobalDataModel.shared.advertisement = decodedImage
+                    if let base64Image = uploadResponse.image {
+                        DispatchQueue.main.async {
+                            if let decodedImage = decodeBase64ToImage(base64String: base64Image) {
+                                GlobalDataModel.shared.advertisement = decodedImage
+                                print(GlobalDataModel.shared.advertisement)
+                                completion(.success(decodedImage))
+                            } else {
+                                print("Failed to decode image.")
+                                completion(.failure(AFError.responseValidationFailed(reason: .dataFileNil)))
+                            }
+                        }
                     } else {
-                        print("Failed to decode image or image data was not found.")
+                        print("No image data found in response.")
+                        completion(.failure(AFError.responseValidationFailed(reason: .dataFileNil)))
                     }
-                    completion(.success(uploadResponse))
                 } else {
                     throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
                 }
@@ -106,6 +116,8 @@ func uploadImage(title: String, description: String, image: UIImage, completion:
             completion(.failure(error))
         }
     }
+
+
 
 }
 

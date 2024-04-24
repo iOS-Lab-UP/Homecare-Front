@@ -4,10 +4,14 @@ import ARKit
 import Combine
 
 struct ARExperienceView: View {
-    var image: UIImage
-    
+    @ObservedObject var globalData = GlobalDataModel.shared
+
     var body: some View {
-        ARViewContainer(selectedImage: image)
+        if globalData.advertisement == nil {
+            return AnyView(EmptyView())
+        }else{
+            return AnyView(ARViewContainer(selectedImage: $globalData.advertisement))
+        }
     }
 }
 
@@ -15,7 +19,8 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {
     }
     
-    var selectedImage: UIImage?
+    @Binding var selectedImage: UIImage?
+
 
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
