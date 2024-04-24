@@ -1,8 +1,8 @@
 //
 //  RoomListView.swift
-//  Homecare-Front
+//  Nemesis-Front
 //
-//  Created by Enrique Gómez Tagle on 08/02/24.
+//  Created by Enrique Gómez Tagle on 23/04/24.
 //
 
 import SwiftUI
@@ -16,11 +16,11 @@ struct RoomListView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Tus habitaciones")
+            Text("Tus publicaciones")
                 .font(.title)
                 .padding(.leading, 20)
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+
             
             
             ScrollView {
@@ -32,13 +32,8 @@ struct RoomListView: View {
                     }
                 }
                 .padding(.horizontal)
-                BulbCounterCard()
-                    .frame(height: 180)
-                    .padding(.horizontal, padding)
-                    .padding(.top, spacing)
+
             }
-            
-            
         }
     }
 }
@@ -54,10 +49,7 @@ struct RoomEnergySquare: View {
                 .frame(width: (UIScreen.main.bounds.width - (20 * 2) - 20) / 2, height: 180)
                 .cornerRadius(25)
                 .clipped()
-            
-            LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
-                .cornerRadius(25)
-            
+
             Text(room.name)
                 .font(.headline)
                 .fontWeight(.bold)
@@ -66,54 +58,6 @@ struct RoomEnergySquare: View {
         }
     }
 }
-
-struct BulbCounterCard: View {
-    @EnvironmentObject var energyData: EnergyData
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color.homecare)
-            
-            VStack {
-                Text("Número de focos")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding(.top)
-                
-                HStack(spacing: 40) {
-                    Button(action: {
-                        if energyData.numBulbs > 0 { energyData.numBulbs -= 1 }
-                    }) {
-                        Image(systemName: "minus.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
-                    }
-                    
-                    Text("\(energyData.numBulbs)")
-                        .font(.system(size: 50))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame(width: 80, alignment: .center)
-                    
-                    Button(action: {
-                        energyData.numBulbs += 1
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.green)
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 8)
-            }
-        }
-        .frame(maxWidth: .infinity, minHeight: 180)
-        .shadow(radius: 5)
-        .padding(.horizontal)
-    }
-}
-
 
 
 #Preview {

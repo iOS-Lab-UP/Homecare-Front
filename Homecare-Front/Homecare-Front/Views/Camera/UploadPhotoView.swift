@@ -44,6 +44,8 @@ struct UploadPhotoView: View{
     @EnvironmentObject var vm: ViewModel
     @State private var navigateToDashboard = false
     @State private var showRoomsSheet = false
+    @State private var navigateToARView = false  // State to control navigation to the AR view
+
     var body: some View {
         NavigationView {
             VStack{

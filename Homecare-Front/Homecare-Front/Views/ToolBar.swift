@@ -1,8 +1,8 @@
 //
 //  ToolBar.swift
-//  Homecare-Front
+//  Nemesis-Front
 //
-//  Created by Luis Cedillo M on 06/02/24.
+//  Created by Luis Cedillo M on 23/04/24.
 //
 import SwiftUI
 
@@ -18,7 +18,7 @@ struct ToolBar: View {
             }
             
             
-            TabBarButton(icon: "bolt.horizontal", isSelected: selectedTab == 2) {
+            TabBarButton(icon: "mappin", isSelected: selectedTab == 2) {
                 selectedTab = 2
             }
             
@@ -30,7 +30,7 @@ struct ToolBar: View {
                     .background(
                         
                         LinearGradient(
-                            gradient: Gradient(colors: [Color.green.opacity(0.8), Color.yellow.opacity(0.8)]),
+                            gradient: Gradient(colors: [Color.red.opacity(0.8), Color.yellow.opacity(0.8)]),
                             startPoint: UnitPoint(x: 0.5, y: 0.3),
                             endPoint: UnitPoint.bottom
                         )
@@ -41,7 +41,7 @@ struct ToolBar: View {
                     .font(.system(size: 35))
             }
             
-            TabBarButton(icon: "lamp.floor", isSelected: selectedTab == 4) {
+            TabBarButton(icon: "note", isSelected: selectedTab == 4) {
                 selectedTab = 4
             }
             
@@ -51,8 +51,8 @@ struct ToolBar: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width - 50, height: 56, alignment: .top)
-        .background(Capsule().fill(Color.homecare.opacity(0.8)))
-        .shadow(color: .homecare, radius: 5, x: 0, y: 3)
+        .background(Capsule().fill(Color.black.opacity(0.8)))
+        .shadow(color: .black, radius: 5, x: 0, y: 3)
         
     }
 }
@@ -65,7 +65,7 @@ struct TabBarButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: icon)
-                .foregroundColor(isSelected ? .green : .gray)
+                .foregroundColor(isSelected ? .yellow : .gray)
                 .font(.system(size: 20, weight: .bold))
                 .padding()
         }

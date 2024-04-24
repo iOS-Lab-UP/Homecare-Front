@@ -1,8 +1,8 @@
 //
 //  RoomsCarrouselView.swift
-//  Homecare-Front
+//  Nemesis-Front
 //
-//  Created by Luis Cedillo M on 06/02/24.
+//  Created by Luis Cedillo M on 23/04/24.
 //
 
 import SwiftUI
@@ -49,9 +49,6 @@ struct RoomEnergyCardView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 250)
-                .overlay(
-                    LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
-                )
             
             VStack(alignment: .leading) {
                 Text(room.name)

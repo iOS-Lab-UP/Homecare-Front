@@ -35,5 +35,9 @@ struct addToRoomsView: View {
             }
         }
     }
+func uploadText(inputText: String) {
+    // Function to upload the text to the rooms
+    ARViewContainer().edgesIgnoringSafeArea(.all)
+}
 
 
