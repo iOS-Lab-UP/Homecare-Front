@@ -27,7 +27,7 @@ struct MapView: View {
     var body: some View {
         NavigationView {
             WebView(url: URL(string: "https://www.google.com/maps/search/oxxo+near+me/@25.6413922,-100.293669,15z/data=!3m1!4b1?entry=ttu")!)
-                .navigationBarTitle("Google Maps", displayMode: .inline)
+                .navigationBarTitle("Oxxos cerca de mi")
         }
     }
 }

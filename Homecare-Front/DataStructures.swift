@@ -106,14 +106,17 @@ class EnergyData: ObservableObject {
     
     func updateRooms() {
         rooms = [
-            Room(name: "Sala de estar", imageName: "living_room", energyConsumption: "\(living_room_kWH) kWh"),
-            Room(name: "Cocina", imageName: "kitchen", energyConsumption: "\(kitchen_kWH) kWh"),
-            Room(name: "Baño principal", imageName: "bathroom", energyConsumption: "\(bathroom_kWH) kWh"),
-            Room(name: "Dormitorio principal", imageName: "bedroom", energyConsumption: "\(bedroom_kWH) kWh"),
-            Room(name: "Oficina en casa", imageName: "home_office", energyConsumption: "\(home_office_kWH) kWh"),
-            Room(name: "Jardín", imageName: "garden", energyConsumption: "\(garden_kWH) kWh")
+
+            Room(name: "", imageName: "Jumex", energyConsumption: ""),
+            Room(name: "", imageName: "Cerveza", energyConsumption: ""),
+            Room(name: "", imageName: "Tang", energyConsumption: ""),
+            Room(name: "", imageName: "Promo", energyConsumption: ""),
+            Room(name: "", imageName: "Gato_baboso", energyConsumption: ""),
+            Room(name: "", imageName: "santa", energyConsumption: "")
+            
         ]
     }
     
     
 }
+
