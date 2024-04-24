@@ -33,7 +33,7 @@ struct MainView: View {
                 
                 
             case 5:
-                SwiftUIView()
+                ARViewContainer()
                 
             default:
                 HomeView()

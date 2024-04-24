@@ -44,13 +44,13 @@ struct UploadPhotoView: View {
                         .scaledToFit()
                         .frame(minWidth: 0, maxWidth: 300)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
-                    
+                    TextField("Enter a title...", text: $photoTitle)  // TextField for entering photo description
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
                     TextField("Enter a description...", text: $photoDescription)  // TextField for entering photo description
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                    TextField("Enter a title...", text: $photoDescription)  // TextField for entering photo description
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+
                     
                     
                 } else {
@@ -83,7 +83,7 @@ struct UploadPhotoView: View {
                                 .padding()
                             }
                             .background(
-                                NavigationLink(destination: MainView(), isActive: $navigateToDashboard) {
+                                NavigationLink(destination: SwiftUIView(), isActive: $navigateToDashboard) {
                                     EmptyView()
                                 }
                                     .hidden()
