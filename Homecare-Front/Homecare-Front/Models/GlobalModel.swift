@@ -23,6 +23,7 @@ class GlobalDataModel: ObservableObject {
     @Published var advicePrompt: String = ""
     // image
     @Published var advertisement: UIImage?
+    @Published var asvertisments: [UIImage] = []
 
     private init() {} // Private initializer to enforce singleton usage
     
@@ -92,6 +93,7 @@ func uploadImage(title: String, description: String, image: UIImage, completion:
                         DispatchQueue.main.async {
                             if let decodedImage = decodeBase64ToImage(base64String: base64Image) {
                                 GlobalDataModel.shared.advertisement = decodedImage
+                                GlobalDataModel.shared.asvertisments.append(decodedImage)
                                 completion(.success(decodedImage))
                             } else {
                                 print("Failed to decode image.")

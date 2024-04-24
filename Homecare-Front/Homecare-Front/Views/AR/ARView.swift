@@ -10,53 +10,59 @@ struct ARExperienceView: View {
         ARViewContainer()
     }
 }
-
 struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {
+        
     }
     
-    var selectedImage: UIImage? = GlobalDataModel.shared.advertisement
+    var selectedImages: [UIImage] = GlobalDataModel.shared.asvertisments
 
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
         
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.vertical] // Only vertical planes
-        arView.session.run(config, options: [.resetTracking, .removeExistingAnchors])
+        // Initial position for the first entity
+            var initialPosition = SIMD3<Float>(0, 0, -0.5) // Start half a meter in front of the camera
+            let positionOffset = SIMD3<Float>(0.5, 0, 0) // Half a meter apart on the x-axis
 
-        if let uiImage = selectedImage, let cgImage = uiImage.cgImage {
-            var material = SimpleMaterial(color: .white, isMetallic: false)
-            do {
-                // Use empty options if not setting anything specific
-                let options = TextureResource.CreateOptions(semantic: .color)
-                let texture = try TextureResource.generate(from: cgImage, options: options)
-                material.baseColor = MaterialColorParameter.texture(texture)
-                print("Texture created successfully.")
-            } catch {
-                print("Failed to generate texture: \(error.localizedDescription)")
-                return arView
+            for image in selectedImages {
+                if let entity = createEntity(from: image) {
+                    let anchorEntity = AnchorEntity(plane: .vertical)
+                    entity.position = initialPosition
+                    anchorEntity.addChild(entity)
+                    arView.scene.addAnchor(anchorEntity)
+                    
+                    context.coordinator.setupGestures(arView: arView, entity: entity)
+                    
+                    // Update initialPosition for the next entity
+                    initialPosition += positionOffset
+                }
             }
 
-            let planeMesh = MeshResource.generatePlane(width: 0.4, depth: 0.3)
-            let planeEntity = ModelEntity(mesh: planeMesh, materials: [material])
-
-
-            // Since we're working with vertical planes, the plane entity should be oriented correctly by default
-            // If not, adjust the orientation here
-            
-            let anchorEntity = AnchorEntity(plane: .vertical)
-            anchorEntity.addChild(planeEntity)
-            arView.scene.addAnchor(anchorEntity)
-
-            context.coordinator.setupGestures(arView: arView, entity: planeEntity)
-
-            print("Plane entity added to the scene.")
-        } else {
-            print("No image is selected or image is not valid.")
-        }
-        
+        print("Entities added to the scene.")
         return arView
     }
+    
+    func createEntity(from image: UIImage) -> ModelEntity? {
+            guard let cgImage = image.cgImage else {
+                print("Image is not valid.")
+                return nil
+            }
+
+            let options = TextureResource.CreateOptions(semantic: .color)
+            guard let texture = try? TextureResource.generate(from: cgImage, options: options) else {
+                print("Failed to generate texture")
+                return nil
+            }
+
+            var material = SimpleMaterial()
+            material.baseColor = MaterialColorParameter.texture(texture)
+            material.metallic = MaterialScalarParameter(floatLiteral: 0.0)
+            material.roughness = MaterialScalarParameter(floatLiteral: 1.0)
+
+            let planeMesh = MeshResource.generatePlane(width: 0.4, depth: 0.3)
+            return ModelEntity(mesh: planeMesh, materials: [material])
+        }
+
     func makeCoordinator() -> Coordinator {
           Coordinator()
       }
