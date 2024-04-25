@@ -1,12 +1,25 @@
 import SwiftUI
 
+
+// Define a structure that holds an image and an ID.
+struct Advertisement: Identifiable {
+    let id: UUID
+    let image: UIImage
+    
+    // Initialize with a UIImage, generating a new UUID as the ID.
+    init(image: UIImage) {
+        self.id = UUID()
+        self.image = image
+    }
+}
+
+// Convert globalData.advertisments to an array of Advertisement objects. inside a list
+
+
 struct RoomListView: View {
-    @EnvironmentObject var energyData: EnergyData
+    @EnvironmentObject var globalData: GlobalDataModel
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 20), count: 2)
-    private let spacing: CGFloat = 20
-    private let padding: CGFloat = 20
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Tus publicaciones")
@@ -16,20 +29,31 @@ struct RoomListView: View {
                 .fontWeight(.bold)
             
             ScrollView {
-                LazyVGrid(columns: columns, spacing: spacing) {
-                    // Usando solo los últimos dos elementos de la lista
-                    ForEach(Array(energyData.rooms.suffix(2)), id: \.id) { room in
-                        RoomEnergySquare(room: room)
+                LazyVGrid(columns: columns, spacing: 20) {
+                    // Iterate over the array of advertisements
+                    ForEach(globalData.advertisementsGallery) { advertisement in
+                        AdvertisementSquare(advertisement: advertisement)
                             .frame(height: 180)
                             .cornerRadius(25)
                     }
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
             }
         }
     }
 }
-
+struct AdvertisementSquare: View {
+    let advertisement: Advertisement
+    
+    var body: some View {
+        Image(uiImage: advertisement.image)
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(25)
+        
+        
+    }
+}
 struct RoomEnergySquare: View {
     var room: Room
     

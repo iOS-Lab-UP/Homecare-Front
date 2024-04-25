@@ -114,7 +114,7 @@ class EnergyData: ObservableObject {
             Room(name: "", imageName: "Gato_baboso", energyConsumption: ""),
             Room(name: "", imageName: "santa", energyConsumption: "")
             
-        ]
+        ] 
     }
     
     

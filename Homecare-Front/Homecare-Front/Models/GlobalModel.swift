@@ -24,6 +24,7 @@ class GlobalDataModel: ObservableObject {
     // image
     @Published var advertisement: UIImage?
     @Published var asvertisments: [UIImage] = []
+    @Published var advertisementsGallery: [Advertisement] = []
 
     private init() {} // Private initializer to enforce singleton usage
     
@@ -32,7 +33,13 @@ class GlobalDataModel: ObservableObject {
             self.objectWillChange.send()
         }
     
+    func convertImagesToAdvertisements(images: [UIImage]) {
+        advertisementsGallery = images.map { Advertisement(image: $0) }
+    }
+    
 }
+
+
 
 func fetchMotivationalPhrase() {
     
